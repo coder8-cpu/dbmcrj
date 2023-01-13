@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+
+<head>
+
+    <!---to add the icon on tab -->
+    <link rel="shortcut icon" type="x-icon" href="{%static 'Images/header/logo.jpg' %}">
+    <!---end -->
+
+    <!--to link the style or css-->
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+    <!--end-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Sign up </title>
+</head>
+<style>
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  font-family: "lato", sans-serif;
+}
+.signupFrm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.form {
+  background-color: white;
+  width: 450px;
+  border-radius: 8px;
+  padding: 20px 40px;
+  box-shadow: 0 10px 25px rgba(5, 52, 92, 0.2);
+}
+
+.title {
+  font-size: 45px;
+  margin-bottom: 50px;
+  color: #0f5996;
+  text-align: center;
+}
+.inputContainer {
+  position: relative;
+  height: 45px;
+  width: 90%;
+  margin-bottom: 17px;
+}
+/* Style the inputs */
+
+.input {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  border: 1px solid #DADCE0;
+  border-radius: 7px;
+  font-size: 16px;
+  padding: 0 20px;
+  outline: none;
+  background: none;
+  z-index: 1;
+}
+
+/* Hide the placeholder texts (a) */
+
+::placeholder {
+  color: transparent;
+}
+/* Styling text labels */
+
+.label {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  padding: 0 4px;
+  background-color: white;
+  color: gray;
+  font-size: 16px;
+  transition: 0.5s;
+  z-index: 0;
+}
+.submitBtn {
+  display: block;
+  margin-left: auto;
+  padding: 15px 30px;
+  border: none;
+  background-color: #0f5996;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 30px;
+}
+
+.submitBtn:hover {
+  background-color:#427aa8;
+  transform: translateY(-2px);
+}
+.input:focus + .label {
+  top: -7px;
+  left: 3px;
+  z-index: 10;
+  font-size: 14px;
+  font-weight: 600;
+  color:#0f5996;
+}
+.input:focus {
+  border: 2px solid #0f5996;
+}
+.input:not(:placeholder-shown)+ .label {
+  top: -7px;
+  left: 3px;
+  z-index: 10;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+</style>
+<body>
+    <div class="cnt">
+        <div class="header">
+          
+          <div class="logo0"><a href="/">
+            <img src="{%static 'Images/header/logo.jpg'%}"></a>
+        </div>
+      
+       <div class="logo"><a href="/">
+           <img src="{%static 'Images/header/200.png'%}"></a>
+       </div>
+      
+         
+      
+          <div class="logo1">
+              <img src="{%static 'Images/header/deshbandhu.png'%}">
+          </div>
+    
+      </div>
+      
+    <div class="signupFrm">
+        <form action="" class="form" method='post'>
+          {%csrf_token%}
+          <h1 class="title">Register</h1>
+    
+          <div class="inputContainer">
+            <input type="number" class="input" placeholder="Roll No" name="rollno">
+            <label for="" class="label">Roll no</label>
+          </div>
+    
+          <div class="inputContainer">
+            <input type="text" class="input" placeholder="Full Name" name="name">
+            <label for="" class="label">Name</label>
+          </div>
+    
+          <div class="inputContainer">
+            <input type="text" class="input" placeholder="Password" name="password">
+            <label for="" class="label">Password</label>
+          </div>
+    
+          <div class="inputContainer">
+            <input type="password" class="input" placeholder="Confirm Password">
+            <label for="" class="label">Confirm Password</label>
+          </div>
+    
+          <input type="submit" class="submitBtn" value="Sign up">
+        </form>
+      </div>
+   
+
+      <footer class="footer">
+        <div class="footer__addr">
+          <h1 class="footer__logo">Deshbandhu Mahavidyalaya</h1>
+      
+          <h2>Established 1973 | Affiliated to Kazi Nazrul University<br>
+            NAAC Accredited 'B+' Grade Institution with CGPA 2.55<br>
+            Recognized under 12(B) and 2(f) of the UGC Act 1956</h2>
+          <address>
+           <br>
+      
+            <a class="footer__btn" href="mailto:dbmprincipal@rediffmail.com">Email Us</a>
+          </address>
+        </div>
+      
+        <ul class="footer__nav">
+      
+          <li class="nav__item">
+      
+            <h2 class="nav__title">Quick links <div id="div1" class="fa"></div></h2>
+      
+            <ul class="nav__ul">
+              <li>
+                <a href="http://www.knu.ac.in/">Kazi Nazrul University</a>
+              </li>
+      
+              <li>
+                <a href="https://www.ugc.ac.in/">University Grants Commission</a>
+              </li>
+      
+              <li>
+                <a href="https://banglaruchchashiksha.wb.gov.in/">Dept. of Higher Education, Govt. of WB</a>
+              </li>
+      
+              <li>
+                <a href="https://www.education.gov.in/en">MHRD, Govt. of India</a>
+              </li> 
+      
+              <li>
+                <a href="https://nlist.inflibnet.ac.in/">N-LIST : Library and Information Services</a>
+              </li>
+            </ul>
+          </li>
+      
+      
+      
+      
+          <li class="nav__item">
+            <h2 class="nav__title">Contact Info <div id="div1" class="fa"></div></h2>
+      
+            <ul class="nav__ul">
+              <li>
+                <a href="#"><strong>Deshabandhu Mahavidyalaya</strong></a>
+              </li>
+      
+              <li>
+                <a href="#"><strong>P.O. :</strong> Chittaranjan</a>
+              </li>
+      
+              <li>
+                <a href="#"><strong>District :</strong>  Paschim Bardhaman</a>
+              </li>
+      
+              <li>
+                <a href="#"><strong>     Pin :</strong> 713331 West Bengal</a>
+              </li>
+      
+              <li>
+                <a href="#"><strong>  E-mail :</strong>dbmprincipal@rediffmail.com</a>
+              </li>
+      
+              <li>
+                <a href="#"><strong>   Phone :</strong>+ 91-341-2525 449</a>
+              </li>
+      
+            </ul>
+          </li>
+        </ul>
+      
+        <div class="legal">
+          <p>2022 &copy; All rights reserved.</p>
+      
+          <div class="legal__links">
+            <span>Made by the group coderfd</span>
+          </div>
+      
+        </div>
+      </footer>
+</body>
+</html>

@@ -1,0 +1,421 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+
+    <!---to add the icon on tab -->
+    <link rel="shortcut icon" type="x-icon" href="{%static 'Images/header/logo.jpg'%}">
+    <!---end -->
+
+    <!--to link the style or css-->
+    <link rel="stylesheet" href="{%static 'css/style.css' %}">
+    <!--end-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title> Deshbandhu Mahavidalaya </title>
+    <style>
+      header{
+        position: fixed;
+        top: 0;left: 0;right: 0;
+        background-color: #fff;
+        padding: 3.5rem 7%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 1000;
+        box-shadow: 0 .5rem 1.5rem rgba(0,0,0,0.1);
+      }
+      @media (min-width:990px){
+        html{
+          font-size:60%
+        }
+        header{
+          padding: 1rem 2rem;
+        }
+      }
+    </style>
+</head>
+<body>
+  <header>
+  <div class="logo0"><a href="">
+    <img src="{%static 'Images/header/logo.jpg' %}"></a>
+</div>
+
+<div class="logo"><a href="">
+   <img src="{%static 'Images/header/200.png' %}"></a>
+</div>
+  
+   <div class="login">
+    <a href="signup.html"> Student Signup</a>
+   </div>
+  <!--deshbandhu imgage-->
+  <div class="logo1">
+    <img src="{%static 'Images/header/deshbandhu.png'%}">
+</div>
+<!---end-->
+</header>
+
+<!----login button -->
+  <div id="id01" class="modal">
+  <div style="position:absolute;top:3%; left:75%;">
+    <form class="modal-content animate" action="" method="post">
+
+      <div class="container">
+        <label for="uname"><b>Name of the student</b></label>
+        <input type="text" placeholder="Enter your name" name="uname" required>
+
+        <label for="Department"><b>Password</b></label>
+        <input type="password" placeholder="Enter your password" name="pswd" required>
+
+        <button type="submit">Login</button>
+        <label>
+
+          <input type="checkbox" checked="checked" name="remember"> Remember me </label>
+
+      </div>
+
+      <div class="container" style="background-color:#f1f1f1">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <span class="psw">Forgot <a href="#">password?</a></span>
+
+      </div>
+
+    </form>
+    
+
+  </div>
+</div>
+<!--login end-->
+
+
+
+
+
+
+<!--scroll bar-->
+    <div class="box">
+        <marquee behavior="scroll" direction="left"> College Prospectus for Admission 2022....................Deshabandhu Mahavidyalaya is a Recipient of RUSA Funds for Infrastructure Upgradation.................Subject Change for Newly Admitted 1st Sem Students: Last Date 26.09.2022..................
+        </marquee>
+    </div>
+<!--scroll end-->
+
+<!--- top slider -->
+
+<div class="slideshow-container">
+
+    <!-- Full-width images with number and caption text -->
+
+    <div class="mySlides fade">
+       <div class="numbertext">1 / 5</div>
+       <img src="media/{{slide_img.img1}}" style="width:100%; height:460px;">
+      </div>
+  
+      <div class="mySlides fade">
+        <div class="numbertext">2 / 5</div>
+        <img src="media/{{slide_img.img2}}" style="width:100%; height:460px;">
+      </div>
+  
+      <div class="mySlides fade">
+        <div class="numbertext">3 / 5</div>
+        <img src="media/{{slide_img.img3}}" style="width:100%; height:460px;">
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">4 / 5</div>
+        <img src="media/{{slide_img.img4}}" style="width:100%; height:460px;">
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">5 / 5</div>
+        <img src="media/{{slide_img.img5}}" style="width:100%; height:460px;">
+      </div>
+        
+  <!-- The dots/circles -->
+
+<div style="text-align:center">
+
+     <span class="dot" onclick="currentSlide(1)"></span>
+
+     <span class="dot" onclick="currentSlide(2)"></span>
+
+     <span class="dot" onclick="currentSlide(3)"></span> 
+
+     <span class="dot" onclick="currentSlide(4)"></span>     
+
+     <span class="dot" onclick="currentSlide(5)"></span>
+
+</div>
+
+<!---end of slider-->
+
+<div class="icon-bar">
+  
+      <a href="college/">   <img src="{%static 'images/icons/college.png'%}"> College </a> 
+
+      <a href="academic/">  <img src="{%static 'images/icons/academic.png'%}"> Academic </a> 
+
+      <a href="admission/"> <img src="{%static 'images/icons/admission.png'%}"> Admission </a> 
+
+      <a href="library/">   <img src="{%static 'images/icons/library.png'%}"> Library </a> 
+
+      <a href="faculty/">  <img src="{%static 'images/icons/facality.png'%}"> Facality </a>
+
+  <!--<a href="pages/contact.html"><img src="images/icons/contact.png'%}"> Contact </a> -->
+
+</div>
+
+
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+
+
+
+
+  <!---about section starts -->
+
+<div class="section2">
+    <div class="about">
+  <h3>Welcome to</h3>
+  <h2>Deshbandhu Mahavidalaya</h2>
+  <p>
+    <strong>Deshabandhu Mahavidyalaya,</strong>Chittaranjan was founded on 3rd September, 1973 under the aegis of Chittaranjan Locomotive Works, Hindustan Cables Ltd, Rupnarayanpur and a group of philanthropists of the area. Initially the college was affiliate of The University of Burdwan. Subsequently from the academic session 2015-16 the college has been affiliated to the newly established Kazi Nazrul University<br><br>Deshbandhu Mahavidyalaya, Chittaranjan has a glorious history of imparting higher education. It offers honours and general courses in science, humanities, commerce and also professional courses.
+  </p>
+</div>
+</div>
+
+<!--end of about section-->
+
+
+<!-- message from principle desk-->
+
+   <div class="section3">
+    <div class="container1">
+      <div class="imgage">
+        <img src="media/{{principle_img.img1}}">
+      </div>
+      <div class="context">
+        <h3> Message from Principle's Desk</h3>
+        <p>I am in immense pleasure to present our college website. It is in conformity with the modern trend of resorting to information technology.<br><br> This will be helpful for prospective students, guardians and whoever concerned to have access to the details of the college including academic and relevant matters. <br><br><h2>{{principle_img.principle_name}}<br>Principal</h2></p>
+      </div>
+      
+    </div>
+   </div>
+<!--end of message-->
+
+
+<!-- photo gallary -->
+<div class="header">
+  <h1>Photo Gallary</h1>
+  <p>Colleges Events and memorable pictures</p>
+</div>
+
+<!-- Photo Grid -->
+<div class="row"> 
+
+  <div class="column">
+    <img src="media/{{gallary_img.img1}}" style="width:100%">
+    <img src="media/{{gallary_img.img2}}" style="width:100%">
+  </div>
+
+  <div class="column">
+    <img src="media/{{gallary_img.img3}}" style="width:100%">
+    <img src="media/{{gallary_img.img4}}" style="width:100%">
+    
+  </div>  
+
+  <div class="column">
+    <img src="media/{{gallary_img.img5}}" style="width:100%">
+    <img src="media/{{gallary_img.img6}}" style="width:100%">
+    
+  </div>
+
+  <div class="column">
+    <img src="media/{{gallary_img.img7}}" style="width:100%">
+    <img src="media/{{gallary_img.img8}}" style="width:100%">
+  </div>
+
+  <!--<button class="button button1"><a href="pages/admission.html">Explore More</button>
+</div>
+-->
+
+
+<!---contact us -->
+
+<div class="container">
+  <div style="text-align:center ;color:#0f5996; font-size: 23px;">
+    <h2>Contact Us</h2>
+    <p>Need enqiry, message us:</p>
+  </div>
+<div class="row">
+  <div style="text-align: center; margin-top: 30px;">
+  <img src="{%static 'Images/header/cont.png'%}" style="width: 30%;"></div>
+  
+  </div>
+
+  <div class="coloumn">
+      <form action="query" method="post">
+        {% csrf_token %}
+        <label for="fname">First Name</label>
+
+        <input type="text" id="fname" name="firstname" placeholder="Your Name.." >
+        <label for="lname">Last Name</label>
+
+        <input type="text" id="lname" name="lastname" placeholder="Your Email..">
+        <label for="state">State</label>
+
+        <select id="State" name="state">
+
+          <option>Jharkhand</option>
+          <option>Bihar</option>
+          <option>West Bengal</option>
+
+        </select>
+
+        <label for="subject">Subject</label>
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  
+  
+</div>
+
+<!---footer -->
+
+
+<footer class="footer">
+  <div class="footer__addr">
+    <h1 class="footer__logo">Deshbandhu Mahavidyalaya</h1>
+
+    <h2>Established 1973 | Affiliated to Kazi Nazrul University<br>
+      NAAC Accredited 'B+' Grade Institution with CGPA 2.55<br>
+      Recognized under 12(B) and 2(f) of the UGC Act 1956</h2>
+    <address>
+     <br>
+
+      <a class="footer__btn" href="mailto:dbmprincipal@rediffmail.com">Email Us</a>
+    </address>
+  </div>
+
+  <ul class="footer__nav">
+
+    <li class="nav__item">
+
+      <h2 class="nav__title">Quick links <div id="div1" class="fa"></div></h2>
+
+      <ul class="nav__ul">
+        <li>
+          <a href="http://www.knu.ac.in/">Kazi Nazrul University</a>
+        </li>
+
+        <li>
+          <a href="https://www.ugc.ac.in/">University Grants Commission</a>
+        </li>
+
+        <li>
+          <a href="https://banglaruchchashiksha.wb.gov.in/">Dept. of Higher Education, Govt. of WB</a>
+        </li>
+
+        <li>
+          <a href="https://www.education.gov.in/en">MHRD, Govt. of India</a>
+        </li> 
+
+        <li>
+          <a href="https://nlist.inflibnet.ac.in/">N-LIST : Library and Information Services</a>
+        </li>
+      </ul>
+    </li>
+
+
+
+
+    <li class="nav__item">
+      <h2 class="nav__title">Contact Info <div id="div1" class="fa"></div></h2>
+
+      <ul class="nav__ul">
+        <li>
+          <a href="#"><strong>Deshabandhu Mahavidyalaya</strong></a>
+        </li>
+
+        <li>
+          <a href="#"><strong>P.O. :</strong> Chittaranjan</a>
+        </li>
+
+        <li>
+          <a href="#"><strong>District :</strong>  Paschim Bardhaman</a>
+        </li>
+
+        <li>
+          <a href="#"><strong>     Pin :</strong> 713331 West Bengal</a>
+        </li>
+
+        <li>
+          <a href="#"><strong>  E-mail :</strong>dbmprincipal@rediffmail.com</a>
+        </li>
+
+        <li>
+          <a href="#"><strong>   Phone :</strong>+ 91-341-2525 449</a>
+        </li>
+
+      </ul>
+    </li>
+  </ul>
+
+  <div class="legal">
+    <p>2022 &copy; All rights reserved.</p>
+
+    <div class="legal__links">
+      <span>Made by the group coderfd</span>
+    </div>
+
+  </div>
+</footer>
+
+<!--image slide javascript-->
+<script>
+  let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 3000); // Change image every 3 seconds
+}
+</script>
+
+<script>
+  function brakechain() {
+    var a;
+    a = document.getElementById("div1");
+    a.innerHTML = "&#xf0c1;";
+    setTimeout(function () {
+        a.innerHTML = "&#xf127;";
+      }, 1000);
+  }
+  brakechain();
+  setInterval(brakechain, 2000);
+  </script>
+
+
+<script>
+  // Get the modal
+  var modal = document.getElementById('id01');
+  
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
+  }
+  </script>
+<!-- end-->
+</body>
+</html>

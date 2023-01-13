@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+   
+    <!---to add the icon on tab -->
+    <link rel="shortcut icon" type="x-icon" href="{%static 'Images/header/logo.jpg' %}">
+    <!---end -->
+
+    <!--to link the style or css-->
+    <link rel="stylesheet" href="{%static 'css/style.css' %}">
+    <!--end-->
+    <title>Library</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+<style>
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  box-sizing: border-box;
+}
+.header{
+  height: 200px;
+  margin: 0;
+}
+.box1{
+    background-color: #6997bd;
+    height: 20px;
+    color:azure;
+    font-weight: 600;
+    position:absolute;
+    left: 0;
+    top: 19%;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+.about1{
+  max-width: 97%;
+  padding: 10px 10px;
+  margin: 50px;
+}
+
+.about1 h1{
+  font-size: 32px;
+  color:black;
+}
+
+.about1 h1 strong{
+  color:#0f5996;
+}
+
+.about1 p{
+  text-align: left;
+  padding-top: 20px;
+  font-size: 17px;
+  color:#717171;
+}
+image img{
+  height: 200px;
+  max-width:80%;
+}
+.bdy{
+  float: left;
+  width: 30%;
+}
+.bdy ul{
+ list-style-type:none;
+}
+
+.bdy ul li{
+  text-align: center;
+  justify-content: center;
+  padding:55px;
+  margin: 20px;
+  line-height: 10px;
+}
+.bdy ul li a{
+  justify-content: center;
+  display: block;
+  text-decoration: none;
+  border: 2px solid #0f5996;
+  border-radius: 20px;
+  color:#0f5996;
+  padding: 15px 10px;
+  margin: 30px;
+  transition: ease-in;
+}
+.bdy ul li a:hover{
+  background:#0f5996;
+  color: aliceblue;
+}
+
+.bdy1{
+  float: left;
+  width: 70%;
+}
+
+.dropbtn {
+  justify-content: center;
+  display: block;
+  text-decoration: none;
+  border: 2px solid #0f5996;
+  border-radius: 20px;
+  height: 25px; width: 250px;
+  color:#0f5996;
+  padding: 15px 10px;
+  margin: 30px;
+  transition: ease-in;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color:#0f5996; color: aliceblue;}
+
+.active, .btn {
+  background:lightblue;
+  color: #fff;
+}
+.bord{
+  border: 2px solid #0f5996;
+  height: 200px;
+  width:50%;
+  border-radius: 10px;
+}
+.images img{
+  margin: 15px;
+  float: left;
+
+}
+.text-container{
+  float: left;
+  margin-left: 20px;
+  font-weight: 700;
+  
+}
+.text-container p{
+  font-size: 15px;
+}
+
+</style>
+<body>
+<div class="cnt">
+  <div class="header">
+    
+    <div class="logo0"><a href="/">
+      <img src="{%static 'Images/header/logo.jpg' %}"></a>
+  </div>
+
+ <div class="logo"><a href="/">
+     <img src="{%static 'Images/header/200.png' %}"></a>
+ </div>
+
+   
+
+    <div class="logo1">
+        <img src="{%static 'Images/header/deshbandhu.png' %}">
+    </div>
+<!----
+    <div class="box1">
+        <marquee behavior="scroll" direction="left"> College Prospectus for Admission 2022.................Deshabandhu Mahavidyalaya is a Recipient of RUSA Funds for Infrastructure Upgradation.................Subject Change for Newly Admitted 1st Sem Students: Last Date 26.09.2022.................
+        </marquee>
+    </div>
+  -->
+</div>
+<div class="arr">
+  <div class="bdy">
+    <div class="sec">
+      <ul>
+        <li>
+          
+          <a href="about/" class="btn active">About Library</a>
+
+          <a href="resources/">Resources</a>
+       
+          <a href="service/">Services</a>
+       
+          <a href="rules/">Rules</a>
+
+          <a href="Management/">Management</a>
+
+
+        </li>
+        
+      </ul>
+    </div>
+</div>
+
+   <div class="bdy1">
+    <div class="about1">
+
+      <h1>About <strong> Library</strong></h1>
+      <br>
+      <p>The college library has a total collection of 25,059 books, valuable reference books, journals, carrer guidance books and keeping a separate record of books of book bank.
+        <br><br>
+        Students are provided with a Reader's Card for reading room in the library and a Borrower's Card which enables them to take books on loan. These cards are non-transferable and must be returned at the end of the session. A general student may be issued two books at a time, one book from the Book bank for a maximum period of three months and one from the college library for a maximum period of 14 days. However an honours student may take three books one from the Book Bank for a maximum period of three months and two from the college library for a maximum period of 14 days. Detailed library rules are available in the library.
+        <br><br>
+        Recently the college library has implemented the Inflibnet N-LIST programme under the UGC INFONET Digital Library Consortium for accessing e-resources.</p><br><br><br><br>
+
+
+
+         <div class="bord">
+          <div class="images">
+            <img src="{{lib.image.url}}" style="height: 160px;">
+          </div>
+          
+          <div class="text-container">
+            <p>S.{{lib.name}}, {{lib.desgination}}</p>
+            <p>Designation:   Librarian</p>
+            <p>mail:          {{lib.mail_id}}</p>
+            <p >WhatsApp:     {{lib.whatsapp}}</p>
+           
+          </div>
+          </div>
+        
+</div>
+</div>
+    </div>
+  
+
+    <footer class="footer">
+      <div class="footer__addr">
+        <h1 class="footer__logo">Deshbandhu Mahavidyalaya</h1>
+    
+        <h2>Established 1973 | Affiliated to Kazi Nazrul University<br>
+          NAAC Accredited 'B+' Grade Institution with CGPA 2.55<br>
+          Recognized under 12(B) and 2(f) of the UGC Act 1956</h2>
+        <address>
+         <br>
+    
+          <a class="footer__btn" href="mailto:dbmprincipal@rediffmail.com">Email Us</a>
+        </address>
+      </div>
+    
+      <ul class="footer__nav">
+    
+        <li class="nav__item">
+    
+          <h2 class="nav__title">Quick links <div id="div1" class="fa"></div></h2>
+    
+          <ul class="nav__ul">
+            <li>
+              <a href="http://www.knu.ac.in/">Kazi Nazrul University</a>
+            </li>
+    
+            <li>
+              <a href="https://www.ugc.ac.in/">University Grants Commission</a>
+            </li>
+    
+            <li>
+              <a href="https://banglaruchchashiksha.wb.gov.in/">Dept. of Higher Education, Govt. of WB</a>
+            </li>
+    
+            <li>
+              <a href="https://www.education.gov.in/en">MHRD, Govt. of India</a>
+            </li> 
+    
+            <li>
+              <a href="https://nlist.inflibnet.ac.in/">N-LIST : Library and Information Services</a>
+            </li>
+          </ul>
+        </li>
+    
+    
+    
+    
+        <li class="nav__item">
+          <h2 class="nav__title">Contact Info <div id="div1" class="fa"></div></h2>
+    
+          <ul class="nav__ul">
+            <li>
+              <a href="#"><strong>Deshabandhu Mahavidyalaya</strong></a>
+            </li>
+    
+            <li>
+              <a href="#"><strong>P.O. :</strong> Chittaranjan</a>
+            </li>
+    
+            <li>
+              <a href="#"><strong>District :</strong>  Paschim Bardhaman</a>
+            </li>
+    
+            <li>
+              <a href="#"><strong>     Pin :</strong> 713331 West Bengal</a>
+            </li>
+    
+            <li>
+              <a href="#"><strong>  E-mail :</strong>dbmprincipal@rediffmail.com</a>
+            </li>
+    
+            <li>
+              <a href="#"><strong>   Phone :</strong>+ 91-341-2525 449</a>
+            </li>
+    
+          </ul>
+        </li>
+      </ul>
+    
+      <div class="legal">
+        <p>2022 &copy; All rights reserved.</p>
+    
+        <div class="legal__links">
+          <span>Made by the group coderfd</span>
+        </div>
+    
+      </div>
+    </footer>
+   
+    </div>
+</body>
+</html>
