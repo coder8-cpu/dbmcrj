@@ -25,11 +25,10 @@ class AllPages():
     def index(self,request):
         if request.method == 'POST':
             data = request.POST
-            PublicQueryForm_object = PublicQueryForm()
-            PublicQueryForm_object.first_name = data.get('firstname')
-            PublicQueryForm_object.last_name = data.get('lastname')
-            PublicQueryForm_object.state_name = data.get('state')
-            PublicQueryForm_object.query = data.get('subject')
+            PublicQueryForm_object = feedback()
+            PublicQueryForm_object.name = data.get('name')
+            PublicQueryForm_object.msg = data.get('msg')
+           
             PublicQueryForm_object.save()
             return redirect(reverse("index"))
         if request.user.is_authenticated:
@@ -37,10 +36,19 @@ class AllPages():
 
         self.context['slide_img'] = SliderImage.objects.all()
         self.context['gallary_img'] = PhotoGallary.objects.first()
-        self.context['marquee']      = IndexAlert.objects.first()
+        self.context['mark']      = IndexAlert.objects.all()
+        self.context['notice']      = Notice.objects.all()
         self.context['principle'] = PrincipleImage.objects.first()
+        self.context['feedback'] = feedback.objects.all()
+        
         return render(request,"index.html",self.context)
-
+    def newsletter(self,request):
+        data = request.POST
+        news = newsletter()
+        news.name = data.get('name')
+        news.email = data.get('email')
+        news.save()
+        return redirect(reverse("index"))
     def gallary(self,request):
         return render(request,"gallery.html")
     def admission(self,request):

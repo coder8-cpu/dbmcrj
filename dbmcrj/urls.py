@@ -26,6 +26,8 @@ urlpatterns = [
     path("students/",include('student.urls')),
     path("query",all.index),
     path('',all.index, name="index"),
+    path('newsletter/',all.newsletter, name=""),
+    path('post/',all.index, name=""),
     path('Faculty/',all.fac, name="fac"),
     path('Faculty/<navs>/',navs.college_nav, name=""),
     path('universityresult/',all.tcsion, name=""),

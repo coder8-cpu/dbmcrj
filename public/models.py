@@ -12,14 +12,7 @@ class PrincipleImage(models.Model):
 
 class PhotoGallary(models.Model):
     img1 = models.ImageField(upload_to="media/pics/gallary",null=True,blank=True)
-    img2 = models.ImageField(upload_to="media/pics/gallary",null=True,blank=True)
-    img3 = models.ImageField(upload_to="media/pics/gallary",null=True,blank=True)
-    img4 = models.ImageField(upload_to="media/pics/gallary",null=True,blank=True)
-    img5 = models.ImageField(upload_to="media/pics/gallary",null=True,blank=True)
-    img6 = models.ImageField(upload_to="media/pics/gallary",null=True,blank=True)
-    img7 = models.ImageField(upload_to="media/pics/gallary",null=True,blank=True)
-    img8 = models.ImageField(upload_to="media/pics/gallary",null=True,blank=True)
-
+    
 class TeachersCouncil(models.Model):
     name = models.CharField(max_length=30,null=True,blank=True)
     qualification = models.CharField(max_length=50,null=True,blank=True)
@@ -170,6 +163,23 @@ class IndexAlert(models.Model):
         return "index marquee msg"
 
 
+class Notice(models.Model):
+    notice_title = models.CharField(max_length=200)
+    notice_details = models.CharField(max_length=200)
+    notice_link_name = models.CharField(max_length=200,null=True,blank=True)
+    notice_file = models.FileField(upload_to="media/notice/files",null=True,blank=True)
+
+class feedback(models.Model):
+    name = models.CharField(max_length=200)
+    msg = models.CharField(max_length=200)
+
+class newsletter(models.Model):
+    name = models.CharField(max_length=200)
+    email = models.CharField(max_length=200)
+
+    def __str__(self) -> str:
+        return str(self.name)
+    
 
 
 
