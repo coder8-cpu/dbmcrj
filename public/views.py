@@ -35,7 +35,7 @@ class AllPages():
             self.context['request'] = request.user 
 
         self.context['slide_img'] = SliderImage.objects.all()
-        self.context['gallary_img'] = PhotoGallary.objects.first()
+        
         self.context['mark']      = IndexAlert.objects.all()
         self.context['notice']      = Notice.objects.all()
         self.context['principle'] = PrincipleImage.objects.first()
@@ -50,7 +50,8 @@ class AllPages():
         news.save()
         return redirect(reverse("index"))
     def gallary(self,request):
-        return render(request,"gallery.html")
+        self.context['gallary_img'] = PhotoGallary.objects.all()
+        return render(request,"gallery.html",self.context)
     def admission(self,request):
         notice_data = AdmissionNotice.objects.first()
         
