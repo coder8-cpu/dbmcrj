@@ -239,10 +239,10 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-5">
-                    <img class="img-fluid rounded mb-5 mb-lg-0" src="{%static 'img/team-1.jpg.png'%}" alt="">
+                    <img class="img-fluid rounded mb-5 mb-lg-0" src="{{principle.img1.url}}" alt="">
                 </div>
                 <div class="col-lg-7">
-                    <p class="section-title pr-5"><span class="pr-2">Dr. Tridip Santapa Kundu</span></p>
+                    <p class="section-title pr-5"><span class="pr-2">{{principle.principle_name}}</span></p>
                     <h1 class="mb-4">Message from Principal's Desk</h1>
                     <p>I am in immense pleasure to present our college website. It is in conformity with the modern trend of resorting to information technology.<br><br> This will be helpful for prospective students, guardians and whoever concerned to have access to the details of the college including academic and relevant matters.<br><br>Thank you for being so thorough and dedicated to your role as a school leader. We can really tell how much you care about the wellbeing of the students both on and off campus. I feel confident sending my child to school everyday knowing that your leadership is in place, thank you!”</p>
                 
@@ -325,255 +325,20 @@
                 <p class="section-title px-5"><span class="px-2">Colleges Events and memorable pictures</span></p>
                 <h1 class="mb-4">Photo Gallary</h1>
             </div>
+
             <div class="row">
+                {%for i in slide_img%}
                 <div class="col-lg-4 mb-5">
                     <div class="card border-0 bg-light shadow-sm pb-2">
-                        <img class="card-img-top mb-2" src="{%static 'img/Images/photo galarry/005.jpeg'%}" alt="">
+                        <img class="card-img-top mb-2" src="{{i.img1.url}}" alt="">
                         <div class="card-body text-center">
-                            <h4 class="card-title">Cycle Race</h4>
+                            <h4 class="card-title">{{i.event}}</h4>
                             
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 mb-5">
-                    <div class="card border-0 bg-light shadow-sm pb-2">
-                        <img class="card-img-top mb-2" src="{%static 'img/Images/photo galarry/002.jpeg'%}" alt="">
-                        <div class="card-body text-center">
-                            <h4 class="card-title">Short-put</h4>
-                            
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 mb-5">
-                    <div class="card border-0 bg-light shadow-sm pb-2">
-                        <img class="card-img-top mb-2" src="{%static 'img/Images/photo galarry/003.jpeg'%}" alt="">
-                        <div class="card-body text-center">
-                            <h4 class="card-title">Certificate Distribution</h4>
-                           
-                        </div>
-                       
-                    </div>
-                </div>
-
-                <div class="col-lg-4 mb-5">
-                    <div class="card border-0 bg-light shadow-sm pb-2">
-                        <img class="card-img-top mb-2" src="{%static 'img/Images/photo galarry/photo gallary.jpg'%}" alt="">
-                        <div class="card-body text-center">
-                            <h4 class="card-title">Translation Day</h4>
-                           
-                        </div>
-                       
-                    </div>
-                </div>
-
-                <div class="col-lg-4 mb-5">
-                    <div class="card border-0 bg-light shadow-sm pb-2">
-                        <img class="card-img-top mb-2" src="{%static 'img/Images/photo galarry/003.jpeg'%}" alt="">
-                        <div class="card-body text-center">
-                            <h4 class="card-title">Award Distribution</h4>
-                           
-                        </div>
-                       
-                    </div>
-                </div>
-
-                <div class="col-lg-4 mb-5">
-                    <div class="card border-0 bg-light shadow-sm pb-2">
-                        <img class="card-img-top mb-2" src="{%static 'img/Images/photo galarry/004.jpeg'%}" alt="">
-                        <div class="card-body text-center">
-                            <h4 class="card-title">Teacher's</h4>
-                           
-                        </div>
-                       
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Class End -->
-
-
-    <!-- Registration Start -->
-    <div class="container-fluid py-5">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-7 mb-5 mb-lg-0">
-                    <p class="section-title pr-5"><span class="pr-2">To reach us</span></p>
-                    <h1 class="mb-4">Contact Us</h1>
-                    <p>All relevant contact information. If there are ways your students can contact you other than email, it's important to include them on the page as well</p>
-                    <ul class="list-inline m-0">
-                        <li class="py-2"><i class="fa fa-check text-success mr-3"></i>24*7 Support</li>
-                        <li class="py-2"><i class="fa fa-check text-success mr-3"></i>Quick Response</li>
-                        <li class="py-2"><i class="fa fa-check text-success mr-3"></i>Easy Communication</li>
-                    </ul>
-                   
-                </div>
-                <div class="col-lg-5">
-                    <div class="card border-0">
-                        <div class="card-header bg-secondary text-center p-4">
-                            <h1 class="text-white m-0">Contact Us</h1>
-                        </div>
-                        <div class="card-body rounded-bottom bg-primary p-5">
-                            <form>
-                                <div class="form-group">
-                                    <input type="text" class="form-control border-0 p-4" placeholder="Your Name" required="required" />
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control border-0 p-4" placeholder="Your Email" required="required" />
-                                </div>
-                                <div class="form-group">
-                                    <select class="custom-select border-0 px-4" style="height: 47px;">
-                                        <option selected>Select Course</option>
-                                        <option value="1">Arts</option>
-                                        <option value="2">Commerce</option>
-                                        <option value="3">Science</option>
-                                        <option value="4">BBA, BCA</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <button class="btn btn-secondary btn-block border-0 py-3" type="submit">Apply</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Registration End -->
-
-
-    <!-- Team Start -->
-    <div class="container-fluid pt-5">
-        <div class="container">
-            <div class="text-center pb-2">
-                <p class="section-title px-5"><span class="px-2">Our Teachers</span></p>
-                <h1 class="mb-4">Meet our Teachers</h1>
-            </div>
-            <div class="row">
-                <div class="col-md-6 col-lg-3 text-center team mb-5">
-                    <div class="position-relative overflow-hidden mb-4" style="border-radius: 100%;">
-                        <img class="img-fluid w-100" src="{%static 'img/team-1.jpg.png'%}" alt="" >
-                        <div
-                            class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
-                            <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;"
-                                href="#"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;"
-                                href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-light text-center px-0" style="width: 38px; height: 38px;"
-                                href="#"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    <h4>Dr.Tridip Santapa Kundu</h4>
-                    <i>College Principle</i>
-                </div>
-                <div class="col-md-6 col-lg-3 text-center team mb-5">
-                    <div class="position-relative overflow-hidden mb-4" style="border-radius: 100%;">
-                        <img class="img-fluid w-100" src="{%static 'img/team-2.jpg.png'%}" alt="" >
-                        <div
-                            class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
-                            <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;"
-                                href="#"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;"
-                                href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-light text-center px-0" style="width: 38px; height: 38px;"
-                                href="#"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    <h4>Mr. Apurba Kumar Roy</h4>
-                    <i>IQAC Coordinator</i>
-                </div>
-                <div class="col-md-6 col-lg-3 text-center team mb-5">
-                    <div class="position-relative overflow-hidden mb-4" style="border-radius: 100%;">
-                        <img class="img-fluid w-100" src="{%static 'img/team-3.jpg.png'%}" alt="" >
-                        <div
-                            class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
-                            <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;"
-                                href="#"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;"
-                                href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-light text-center px-0" style="width: 38px; height: 38px;"
-                                href="#"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    <h4>Mr.Pritam Das</h4>
-                    <i>Assistant Professor(English)</i>
-                </div>
-                <div class="col-md-6 col-lg-3 text-center team mb-5">
-                    <div class="position-relative overflow-hidden mb-4" style="border-radius: 100%;">
-                        <img class="img-fluid w-100" src="{%static 'img/team-4.jpg.png'%}" alt="" >
-                        <div
-                            class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
-                            <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;"
-                                href="#"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;"
-                                href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-light text-center px-0" style="width: 38px; height: 38px;"
-                                href="#"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    <h4>Dr. Shrabani Basu</h4>
-                    <i>Assistant Professor(English)</i>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Team End -->
-
-
-   
-    <!-- Blog Start -->
-    <div class="container-fluid pt-5">
-        <div class="container">
-            <div class="text-center pb-2">
-                <p class="section-title px-5"><span class="px-2">Facility</span></p>
-                <h1 class="mb-4">Our Facalities</h1>
-            </div>
-            <div class="row pb-3">
-                <div class="col-lg-4 mb-4">
-                    <div class="card border-0 shadow-sm mb-2">
-                        <img class="card-img-top mb-2" src="{%static 'img/blog-1.jpg.png'%}" alt="">
-                        <div class="card-body bg-light text-center p-4">
-                            <h4 class="">Computer Science Lab</h4>
-                            <div class="d-flex justify-content-center mb-3">
-                                <small class="mr-3"><i class="fa fa-user text-primary"></i> Student</small>
-                                <small class="mr-3"><i class="fa fa-folder text-primary"></i> Web Development</small>
-                                <small class="mr-3"><i class="fa fa-comments text-primary"></i> 15</small>
-                            </div>
-                            <p>.These are typically public libraries and academic institutions.Generally, users must follow a certain user policy to retain access to the computers. </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="card border-0 shadow-sm mb-2">
-                        <img class="card-img-top mb-2" src="{%static 'img/blog-2.jpg.png'%}" alt="">
-                        <div class="card-body bg-light text-center p-4">
-                            <h4 class="">College Canteen</h4>
-                            <div class="d-flex justify-content-center mb-3">
-                                <small class="mr-3"><i class="fa fa-user text-primary"></i> People</small>
-                               
-                                <small class="mr-3"><i class="fa fa-comments text-primary"></i> 4</small>
-                            </div>
-                            <p>A cafeteria, sometimes called a canteen it is a type of food service location in which there is little or no waiting staff table service, </p>
-                           
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="card border-0 shadow-sm mb-2">
-                        <img class="card-img-top mb-2" src="{%static 'img/blog-3.jpg'%}" alt="">
-                        <div class="card-body bg-light text-center p-4">
-                            <h4 class="">Auditorium</h4>
-                            <div class="d-flex justify-content-center mb-3">
-                                <small class="mr-3"><i class="fa fa-user text-primary"></i> Member</small>
-                                <small class="mr-3"><i class="fa fa-folder text-primary"></i> Programm</small>
-                                <small class="mr-3"><i class="fa fa-comments text-primary"></i> OO</small>
-                            </div>
-                            <p>A room built to enable an audience to hear and watch performances. For movie theatres, the number of auditoria is expressed as the number of screens.</p>
-                        </div>
-                    </div>
-                </div>
+                {%endfor%}
+                
             </div>
         </div>
     </div>
@@ -642,6 +407,56 @@
         </div>
     </div>
     <!-- Testimonial End -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7 mb-5 mb-lg-0">
+                    <p class="section-title pr-5"><span class="pr-2">Book A Seat</span></p>
+                    <h1 class="mb-4">Book A Seat For Your Kid</h1>
+                    <p>Invidunt lorem justo sanctus clita. Erat lorem labore ea, justo dolor lorem ipsum ut sed eos,
+                        ipsum et dolor kasd sit ea justo. Erat justo sed sed diam. Ea et erat ut sed diam sea ipsum est
+                        dolor</p>
+                    <ul class="list-inline m-0">
+                        <li class="py-2"><i class="fa fa-check text-success mr-3"></i>Labore eos amet dolor amet diam</li>
+                        <li class="py-2"><i class="fa fa-check text-success mr-3"></i>Etsea et sit dolor amet ipsum</li>
+                        <li class="py-2"><i class="fa fa-check text-success mr-3"></i>Diam dolor diam elitripsum vero.</li>
+                    </ul>
+                    <a href="" class="btn btn-primary mt-4 py-2 px-4">Book Now</a>
+                </div>
+                <div class="col-lg-5">
+                    <div class="card border-0">
+                        <div class="card-header bg-secondary text-center p-4">
+                            <h1 class="text-white m-0">Book A Seat</h1>
+                        </div>
+                        <div class="card-body rounded-bottom bg-primary p-5">
+                            <form>
+                                <div class="form-group">
+                                    <input type="text" class="form-control border-0 p-4" placeholder="Your Name" required="required" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control border-0 p-4" placeholder="Your Email" required="required" />
+                                </div>
+                                <div class="form-group">
+                                    <select class="custom-select border-0 px-4" style="height: 47px;">
+                                        <option selected>Select A Class</option>
+                                        <option value="1">Class 1</option>
+                                        <option value="2">Class 1</option>
+                                        <option value="3">Class 1</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <button class="btn btn-secondary btn-block border-0 py-3" type="submit">Book Now</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Registration End -->
+
+
 
     <!-- Footer Start -->
     <div class="container-fluid bg-secondary text-white mt-5 py-5 px-sm-3 px-md-5">

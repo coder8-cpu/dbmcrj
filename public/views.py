@@ -17,7 +17,7 @@ from django.contrib.auth.hashers import make_password,check_password
 # Create your views here.
 # views.py for public section
 
-class AllPages():  # rendering the nav bar
+class AllPages():  
 
     def __init__(self) -> None:
         self.context = {}
@@ -34,10 +34,11 @@ class AllPages():  # rendering the nav bar
             return redirect(reverse("index"))
         if request.user.is_authenticated:
             self.context['request'] = request.user 
-        self.context['slide_img'] = SliderImage.objects.first()
+
+        self.context['slide_img'] = SliderImage.objects.all()
         self.context['gallary_img'] = PhotoGallary.objects.first()
         self.context['marquee']      = IndexAlert.objects.first()
-        self.context['principle_img'] = PrincipleImage.objects.first()
+        self.context['principle'] = PrincipleImage.objects.first()
         return render(request,"index.html",self.context)
 
     def gallary(self,request):
@@ -190,7 +191,5 @@ class allnavs():
         if navs == "Faculty":
             return redirect(reverse("fac"))
 
-    def login(self,request):
-        pass
-        
+    
         

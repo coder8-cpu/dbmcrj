@@ -4,10 +4,7 @@ from django.db import models
 
 class SliderImage(models.Model):
     img1 = models.ImageField(upload_to="media/pics/slider",null=True,blank=True)
-    img2 = models.ImageField(upload_to="media/pics/slider",null=True,blank=True)
-    img3 = models.ImageField(upload_to="media/pics/slider",null=True,blank=True)
-    img4 = models.ImageField(upload_to="media/pics/slider",null=True,blank=True)
-    img5 = models.ImageField(upload_to="media/pics/slider",null=True,blank=True)
+    event = models.CharField(max_length=30,null=True,blank=True)
 
 class PrincipleImage(models.Model):
     principle_name = models.CharField(max_length=30,null=True,blank=True)
