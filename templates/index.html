@@ -10,7 +10,7 @@
     <meta content="Free HTML Templates" name="description">
 
     <!-- Favicon -->
-    <link href="{%static 'img/favicon.ico'%}" rel="icon">
+    <link href="{%static 'img/Images/header/logo.jpg'%}" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -30,12 +30,39 @@
     <link href="{%static 'css/style.css'%}" rel="stylesheet">
 </head>
 <style>
+
+       .loader_bg {
+     position: fixed;
+     z-index: 9999999;
+     background: #fff;
+     width: 100%;
+     height: 100%;
+}
+ .loader {
+     height: 100%;
+     width: 100%;
+     position: absolute;
+     left: 0;
+     top: 0;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+ .loader img {
+     width: 280px;
+}
+
     .box1{
         color:white;
         font-weight: 600;
     }
 </style>
 <body>
+    <!-- loader  -->
+    <div class="loader_bg">
+        <div class="loader"><img src="{%static 'img/loading.gif'%}" alt="#" /></div>
+     </div>
+     <!-- end loader -->
     <!-- Navbar Start -->
     <div class="container-fluid bg-light position-relative shadow">
         <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5">
@@ -80,7 +107,7 @@
                             <a href="Faculty/" class="dropdown-item">Faculty</a>
                             <a href="Rules/" class="dropdown-item">Rules & Regulation</a>
                             <a href="Department/" class="dropdown-item">Department</a>
-                            <a href="NSCB/" class="dropdown-item">Netaji Subhash Chandra Bose</a>
+                            <a href="https://pg.wbnsouadmissions.com/" class="dropdown-item">Netaji Subhash Chandra Bose</a>
                         </div>
                     </div>
 
@@ -99,7 +126,7 @@
                         <div class="dropdown-menu rounded-0 m-0">
                             <a href="About/" class="dropdown-item">About </a>
                             <a href="Resources/" class="dropdown-item">Resources</a>
-                            <a href="Library/" class="dropdown-item">E-Library</a>
+                            <a href="https://dbmcrj-opac.libcarecloud.com/" class="dropdown-item">E-Library</a>
                             <a href="Rules_" class="dropdown-item">Rules</a>
 
                         </div>
@@ -117,10 +144,10 @@
 
     <div class="container-fluid bg-primary px-0 px-md-5 mb-5">
         <div class="row align-items-center px-3">
-                <div class="col-lg-6 text-center text-lg-left">
+                <div class="col-lg-6 text-center text-lg-left"><br><br><br><br>
                     <h4 class="text-white mb-4 mt-5 mt-lg-0">Welcome To</h4>
                     <h1 class="display-3 font-weight-bold text-white">Deshbandhu Mahavidalaya</h1>
-                    <p class="text-white mb-4">Chittaranjan was founded on 3rd September, 1973 under the aegis of Chittaranjan Locomotive Works, Hindustan Cables Ltd, Rupnarayanpur and a group of philanthropists of the area. Initially the college was affiliate of The University of Burdwan. Subsequently from the academic session 2015-16 the college has been affiliated to the newly established Kazi Nazrul University</p>
+                    <p class="text-white mb-4">Chittaranjan was founded on 3rd September, 1973 under the aegis of Chittaranjan Locomotive Works, Hindustan Cables Ltd, Rupnarayanpur and a group of philanthropists of the area. Initially the college was affiliate of The University of Burdwan.<br><br> Subsequently from the academic session 2015-16 the college has been affiliated to the newly established Kazi Nazrul University<br><br> “I welcome you new student to our amazing school and the beautiful class. I hope you will excel in studies and make us proud with your best efforts and results.”</p>
         
                 </div>
 
@@ -152,23 +179,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Header Start --
-    <div class="container-fluid bg-primary px-0 px-md-5 mb-5">
-        <div class="row align-items-center px-3">
-            <div class="col-lg-6 text-center text-lg-left">
-                <h4 class="text-white mb-4 mt-5 mt-lg-0">Welcome To</h4>
-                <h1 class="display-3 font-weight-bold text-white">Deshbandhu Mahavidalaya</h1>
-                <p class="text-white mb-4">Chittaranjan was founded on 3rd September, 1973 under the aegis of Chittaranjan Locomotive Works, Hindustan Cables Ltd, Rupnarayanpur and a group of philanthropists of the area. Initially the college was affiliate of The University of Burdwan. Subsequently from the academic session 2015-16 the college has been affiliated to the newly established Kazi Nazrul University</p>
-    
-            </div>
-            <div class="col-lg-6 text-center text-lg-right">
-                
-            </div>
-        </div>
-    </div>
-    <!-- Header End -->
-
 
     <!-- Facilities Start -->
     <div class="container-fluid pt-5">
@@ -406,27 +416,25 @@
             </div>
         </div>
     </div>
-    <!-- Testimonial End -->
+    <!-- Registration Start -->
     <div class="container-fluid py-5">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-7 mb-5 mb-lg-0">
-                    <p class="section-title pr-5"><span class="pr-2">Book A Seat</span></p>
-                    <h1 class="mb-4">Book A Seat For Your Kid</h1>
-                    <p>Invidunt lorem justo sanctus clita. Erat lorem labore ea, justo dolor lorem ipsum ut sed eos,
-                        ipsum et dolor kasd sit ea justo. Erat justo sed sed diam. Ea et erat ut sed diam sea ipsum est
-                        dolor</p>
+                    <p class="section-title pr-5"><span class="pr-2">To reach us</span></p>
+                    <h1 class="mb-4">Contact Us</h1>
+                    <p>All relevant contact information. If there are ways your students can contact you other than email, it's important to include them on the page as well</p>
                     <ul class="list-inline m-0">
-                        <li class="py-2"><i class="fa fa-check text-success mr-3"></i>Labore eos amet dolor amet diam</li>
-                        <li class="py-2"><i class="fa fa-check text-success mr-3"></i>Etsea et sit dolor amet ipsum</li>
-                        <li class="py-2"><i class="fa fa-check text-success mr-3"></i>Diam dolor diam elitripsum vero.</li>
+                        <li class="py-2"><i class="fa fa-check text-success mr-3"></i>24*7 Support</li>
+                        <li class="py-2"><i class="fa fa-check text-success mr-3"></i>Quick Response</li>
+                        <li class="py-2"><i class="fa fa-check text-success mr-3"></i>Easy Communication</li>
                     </ul>
-                    <a href="" class="btn btn-primary mt-4 py-2 px-4">Book Now</a>
+                   
                 </div>
                 <div class="col-lg-5">
                     <div class="card border-0">
                         <div class="card-header bg-secondary text-center p-4">
-                            <h1 class="text-white m-0">Book A Seat</h1>
+                            <h1 class="text-white m-0">Contact Us</h1>
                         </div>
                         <div class="card-body rounded-bottom bg-primary p-5">
                             <form>
@@ -438,14 +446,15 @@
                                 </div>
                                 <div class="form-group">
                                     <select class="custom-select border-0 px-4" style="height: 47px;">
-                                        <option selected>Select A Class</option>
-                                        <option value="1">Class 1</option>
-                                        <option value="2">Class 1</option>
-                                        <option value="3">Class 1</option>
+                                        <option selected>Select Course</option>
+                                        <option value="1">Arts</option>
+                                        <option value="2">Commerce</option>
+                                        <option value="3">Science</option>
+                                        <option value="4">BBA, BCA</option>
                                     </select>
                                 </div>
                                 <div>
-                                    <button class="btn btn-secondary btn-block border-0 py-3" type="submit">Book Now</button>
+                                    <button class="btn btn-secondary btn-block border-0 py-3" type="submit">Apply</button>
                                 </div>
                             </form>
                         </div>
@@ -554,6 +563,16 @@
     <script src="{%static 'lib/owlcarousel/owl.carousel.min.js'%}"></script>
     <script src="{%static 'lib/isotope/isotope.pkgd.min.js'%}"></script>
     <script src="{%static 'js/lightbox.min.js'%}"></script>
+    <script>
+        $(function () {
+
+"use strict";
+
+setTimeout(function () {
+  $('.loader_bg').fadeToggle();
+}, 1000);
+        })
+     </script>
 
     <!-- Contact Javascript File -->
     <script src="{%static 'mail/jqBootstrapValidation.min.js'%}"></script>
