@@ -90,9 +90,9 @@ class FacultyMembers(models.Model):
         return str(self.name)
 
 class PublicQueryForm(models.Model):
-    first_name = models.CharField(max_length=100,null=True,blank=True)
-    last_name  = models.CharField(max_length=100,null=True,blank=True)
-    state_name = models.CharField(max_length=100,null=True,blank=True)
+    name = models.CharField(max_length=100,null=True,blank=True)
+    email  = models.CharField(max_length=100,null=True,blank=True)
+    subject = models.CharField(max_length=100,null=True,blank=True)
     query      = models.CharField(max_length=100,null=True,blank=True)
 
     def __str__(self) -> str:
@@ -180,8 +180,16 @@ class newsletter(models.Model):
     def __str__(self) -> str:
         return str(self.name)
     
+class notice_files(models.Model):
+    label = models.CharField(max_length=100)
+    file  = models.FileField()
+
+class DocumentRequired(models.Model):
+    label = models.CharField(max_length=1000)
 
 
+class AdmissionQuery(models.Model):
+    pass
 
 
 

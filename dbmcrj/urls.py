@@ -26,6 +26,8 @@ urlpatterns = [
     path("students/",include('student.urls')),
     path("query",all.index),
     path('',all.index, name="index"),
+    path('admission-query/',all.adm_query, name=""),
+    path('contactus/send-contact/',all.contact, name=""),
     path('newsletter/',all.newsletter, name=""),
     path('post/',all.index, name=""),
     path('Faculty/',all.fac, name="fac"),

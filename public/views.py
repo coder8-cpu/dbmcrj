@@ -54,11 +54,18 @@ class AllPages():
         return render(request,"gallery.html",self.context)
     def admission(self,request):
         notice_data = AdmissionNotice.objects.first()
+        courses     = Courses.objects.all()
+        docs        = DocumentRequired.objects.all()
+        notice_file = notice_files.objects.all()
         
         self.context["notice"] = notice_data
+        self.context["course"] = courses
+        self.context["doc"] = docs
+        self.context["files"] = notice_file
 
         return render(request,"admission.html",self.context)
-
+    def adm_query(self,request):
+        pass
     def gbody(self,request):
         g_data = GoverningBody.objects.all()
         self.context["datas"] = g_data
@@ -85,9 +92,9 @@ class AllPages():
 
     def depart(self,request):
         dep_data = Courses.objects.all()
-        notice_data = AdmissionNotice.objects.first()
+        
         self.context['dep'] = dep_data
-        self.context["notice"] = notice_data
+       
         return render(request,"department.html",self.context)
 
     def tc(self,request):
@@ -113,7 +120,13 @@ class AllPages():
         return render(request,"iqac.html")
 
     def contact(self,request):
-
+        if request.method == 'POST':
+            data = PublicQueryForm()
+            data.name = request.POST.get('name')
+            data.email = request.POST.get('email')
+            data.subject = request.POST.get('subject')
+            data.message = request.POST.get('message')
+            return redirect(reverse("contact"))
         return render(request,"contact.html")
     
     def rules(self,request):
@@ -121,10 +134,14 @@ class AllPages():
         return render(request,"rules.html")
    
     def tc(self,request):
-        return render(request,"tc.html")
+        tc = TeachersCouncil.objects.all()
+        self.context['t'] = tc
+        return render(request,"tc.html",self.context)
     
     def admins(self,request):
-        return render(request,"adminis.html")
+        datas = AdministrativeOfficer.objects.all()
+        self.context['data'] = datas
+        return render(request,"adminis.html",self.context)
    
     def lib(self,request):
         return render(request,"library.html")

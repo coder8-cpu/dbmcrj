@@ -129,24 +129,41 @@
                     <h2 class="mb-4">Important Dates</h2>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                            <a>Online Form Fllup Start</a>
-                            <span class="badge badge-primary badge-pill">06.08.2023</span>
+                            <a>Honours Course Date</a>
+                            <span class="badge badge-primary badge-pill">{{notice.hounours_course_date}}</span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                            <a>Online Form Fllup Start</a>
-                            <span class="badge badge-primary badge-pill">06.08.2023</span>
+                            <a>Program Course Date</a>
+                            <span class="badge badge-primary badge-pill">{{notice.program_course_date}}</span>
                         </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                            <a>Merit Publish Date</a>
+                            <span class="badge badge-primary badge-pill">{{notice.merit_publish_date}}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                            <a>Carrer Counceling Date</a>
+                            <span class="badge badge-primary badge-pill">{{notice.carrer_counceling_date}}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                            <a>Fee Payment</a>
+                            <span class="badge badge-primary badge-pill">{{notice.fees_payment}}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                            <a>Document Verification</a>
+                            <span class="badge badge-primary badge-pill">{{notice.document_verification}}</span>
+                        </li>
+                        
                     </ul>
                     <h3 class="mb-4">Document's required</h3>
                     <ul class="list-group list-group-flush">
+                       
+                        {%for i in doc%}
                         <li class="list-group-item d-flex justify-content-between align-items-center px-0">
                             
-                            <span class="badge badge-primary badge-pill">class 10th marksheet</span>
+                            <span class="badge badge-primary badge-pill">{{i.label}}</span>
                         </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                            
-                            <span class="badge badge-primary badge-pill">class 12th marksheet</span>
-                        </li>
+                        {%endfor%}
+
                         
                     </ul>
                     </div>
@@ -155,36 +172,20 @@
                 <div class="mb-5 mx-n3">
                     <h2 class="mb-4 ml-3">Notice</h2>
                     <div class="owl-carousel post-carousel position-relative">
-                        <div class="d-flex align-items-center bg-light shadow-sm rounded overflow-hidden mx-3">
-                            
-                            <div class="pl-3">
-                                <h5 class="">Admission notice</h5>
-                                <div class="d-flex">
-                                    <small class="mr-3"><i class="fa fa-user text-primary"></i> Student</small>
-                                   
-                                </div>
-                            </div>
-                        </div>
+                       
+                        {%for i in files%}
                         <div class="d-flex align-items-center bg-light shadow-sm rounded overflow-hidden mx-3">
                            
                             <div class="pl-3">
-                                <h5 class="">Important Document required</h5>
+                                <h5 class="">{{i.lable}}</h5>
                                 <div class="d-flex">
-                                    <small class="mr-3"><i class="fa fa-user text-primary"></i>Student</small>
+                                    <small class="mr-3"><i class="fa fa-user text-primary"></i><a href="{{i.file.url}}" download>File</a></small>
                                     
                                 </div>
                             </div>
                         </div>
-                        <div class="d-flex align-items-center bg-light shadow-sm rounded overflow-hidden mx-3">
-                            
-                            <div class="pl-3">
-                                <h5 class="">important Dates</h5>
-                                <div class="d-flex">
-                                    <small class="mr-3"><i class="fa fa-user text-primary"></i>Student</small>
-                                    
-                                </div>
-                            </div>
-                        </div>
+                        {%endfor%}
+                        
                     </div>
                 </div>
 
@@ -193,23 +194,23 @@
                 <!-- Comment Form -->
                 <div class="bg-light p-5">
                     <h2 class="mb-4">Need Help, Contact Us</h2>
-                    <form>
+                    <form action="admission-query/" method="post">
                         <div class="form-group">
                             <label for="name">Name *</label>
-                            <input type="text" class="form-control" id="name">
+                            <input type="text" class="form-control" id="name" name="name">
                         </div>
                         <div class="form-group">
                             <label for="email">Email *</label>
-                            <input type="email" class="form-control" id="email">
+                            <input type="email" class="form-control" id="email" name="email">
                         </div>
                         <div class="form-group">
                             <label for="website">,Mobile</label>
-                            <input type="tel" class="form-control" id="website">
+                            <input type="tel" class="form-control" id="website" name="mobilno">
                         </div>
 
                         <div class="form-group">
                             <label for="message">Message *</label>
-                            <textarea id="message" cols="30" rows="5" class="form-control"></textarea>
+                            <textarea id="message" cols="30" rows="5" class="form-control" name="message"></textarea>
                         </div>
                         <div class="form-group mb-0">
                             <input type="submit" value="Leave Query" class="btn btn-primary px-3">
