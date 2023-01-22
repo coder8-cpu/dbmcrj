@@ -123,13 +123,15 @@
                     <h1 class="mb-4">Departments</h1>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                            <a>Online Form Fllup Start</a>
-                            <span class="badge badge-primary badge-pill">06.08.2023</span>
+                            <a>Department Name</a>
+                            <span class="badge badge-primary badge-pill">Seat Capacity</span>
                         </li>
+                        {%for i in dep%}
                         <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                            <a>Online Form Fllup Start</a>
-                            <span class="badge badge-primary badge-pill">06.08.2023</span>
+                            <a href="">{{i.coursename}}</a>
+                            <span class="badge badge-primary badge-pill">{{i.courseseats}}</span>
                         </li>
+                        {%endfor%}
                     </ul>
                 </div>
             </div>

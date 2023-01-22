@@ -25,31 +25,47 @@ class AllPages():
     def index(self,request):
         if request.method == 'POST':
             data = request.POST
-            PublicQueryForm_object = PublicQueryForm()
-            PublicQueryForm_object.first_name = data.get('firstname')
-            PublicQueryForm_object.last_name = data.get('lastname')
-            PublicQueryForm_object.state_name = data.get('state')
-            PublicQueryForm_object.query = data.get('subject')
+            PublicQueryForm_object = feedback()
+            PublicQueryForm_object.name = data.get('name')
+            PublicQueryForm_object.msg = data.get('msg')
+           
             PublicQueryForm_object.save()
             return redirect(reverse("index"))
         if request.user.is_authenticated:
             self.context['request'] = request.user 
 
         self.context['slide_img'] = SliderImage.objects.all()
-        self.context['gallary_img'] = PhotoGallary.objects.first()
-        self.context['marquee']      = IndexAlert.objects.first()
+        
+        self.context['mark']      = IndexAlert.objects.all()
+        self.context['notice']      = Notice.objects.all()
         self.context['principle'] = PrincipleImage.objects.first()
+        self.context['feedback'] = feedback.objects.all()
+        
         return render(request,"index.html",self.context)
-
+    def newsletter(self,request):
+        data = request.POST
+        news = newsletter()
+        news.name = data.get('name')
+        news.email = data.get('email')
+        news.save()
+        return redirect(reverse("index"))
     def gallary(self,request):
-        return render(request,"gallery.html")
+        self.context['gallary_img'] = PhotoGallary.objects.all()
+        return render(request,"gallery.html",self.context)
     def admission(self,request):
         notice_data = AdmissionNotice.objects.first()
+        courses     = Courses.objects.all()
+        docs        = DocumentRequired.objects.all()
+        notice_file = notice_files.objects.all()
         
         self.context["notice"] = notice_data
+        self.context["course"] = courses
+        self.context["doc"] = docs
+        self.context["files"] = notice_file
 
         return render(request,"admission.html",self.context)
-
+    def adm_query(self,request):
+        pass
     def gbody(self,request):
         g_data = GoverningBody.objects.all()
         self.context["datas"] = g_data
@@ -76,9 +92,9 @@ class AllPages():
 
     def depart(self,request):
         dep_data = Courses.objects.all()
-        notice_data = AdmissionNotice.objects.first()
+        
         self.context['dep'] = dep_data
-        self.context["notice"] = notice_data
+       
         return render(request,"department.html",self.context)
 
     def tc(self,request):
@@ -104,7 +120,13 @@ class AllPages():
         return render(request,"iqac.html")
 
     def contact(self,request):
-
+        if request.method == 'POST':
+            data = PublicQueryForm()
+            data.name = request.POST.get('name')
+            data.email = request.POST.get('email')
+            data.subject = request.POST.get('subject')
+            data.message = request.POST.get('message')
+            return redirect(reverse("contact"))
         return render(request,"contact.html")
     
     def rules(self,request):
@@ -112,10 +134,14 @@ class AllPages():
         return render(request,"rules.html")
    
     def tc(self,request):
-        return render(request,"tc.html")
+        tc = TeachersCouncil.objects.all()
+        self.context['t'] = tc
+        return render(request,"tc.html",self.context)
     
     def admins(self,request):
-        return render(request,"adminis.html")
+        datas = AdministrativeOfficer.objects.all()
+        self.context['data'] = datas
+        return render(request,"adminis.html",self.context)
    
     def lib(self,request):
         return render(request,"library.html")
