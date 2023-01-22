@@ -3,111 +3,184 @@ from django.db import models
 # Create your models here.
 
 class SliderImage(models.Model):
-    img1 = models.ImageField(upload_to="media/pics/slider")
-    img2 = models.ImageField(upload_to="media/pics/slider")
-    img3 = models.ImageField(upload_to="media/pics/slider")
-    img4 = models.ImageField(upload_to="media/pics/slider")
-    img5 = models.ImageField(upload_to="media/pics/slider")
+    img1 = models.ImageField(upload_to="media/pics/slider",null=True,blank=True)
+    img2 = models.ImageField(upload_to="media/pics/slider",null=True,blank=True)
+    img3 = models.ImageField(upload_to="media/pics/slider",null=True,blank=True)
+    img4 = models.ImageField(upload_to="media/pics/slider",null=True,blank=True)
+    img5 = models.ImageField(upload_to="media/pics/slider",null=True,blank=True)
 
 class PrincipleImage(models.Model):
-    principle_name = models.CharField(max_length=30)
-    img1 = models.ImageField(upload_to="media/pics/principle")
+    principle_name = models.CharField(max_length=30,null=True,blank=True)
+    img1 = models.ImageField(upload_to="media/pics/principle",null=True,blank=True)
 
 class PhotoGallary(models.Model):
-    img1 = models.ImageField(upload_to="media/pics/gallary")
-    img2 = models.ImageField(upload_to="media/pics/gallary")
-    img3 = models.ImageField(upload_to="media/pics/gallary")
-    img4 = models.ImageField(upload_to="media/pics/gallary")
-    img5 = models.ImageField(upload_to="media/pics/gallary")
-    img6 = models.ImageField(upload_to="media/pics/gallary")
-    img7 = models.ImageField(upload_to="media/pics/gallary")
-    img8 = models.ImageField(upload_to="media/pics/gallary")
+    img1 = models.ImageField(upload_to="media/pics/gallary",null=True,blank=True)
+    img2 = models.ImageField(upload_to="media/pics/gallary",null=True,blank=True)
+    img3 = models.ImageField(upload_to="media/pics/gallary",null=True,blank=True)
+    img4 = models.ImageField(upload_to="media/pics/gallary",null=True,blank=True)
+    img5 = models.ImageField(upload_to="media/pics/gallary",null=True,blank=True)
+    img6 = models.ImageField(upload_to="media/pics/gallary",null=True,blank=True)
+    img7 = models.ImageField(upload_to="media/pics/gallary",null=True,blank=True)
+    img8 = models.ImageField(upload_to="media/pics/gallary",null=True,blank=True)
 
 class TeachersCouncil(models.Model):
-    name = models.CharField(max_length=30)
-    qualification = models.CharField(max_length=50)
-    desgination   = models.CharField(max_length=50)
+    name = models.CharField(max_length=30,null=True,blank=True)
+    qualification = models.CharField(max_length=50,null=True,blank=True)
+    desgination   = models.CharField(max_length=50,null=True,blank=True)
 
     def __str__(self) -> str:
         return str(self.name)
 
 class Courses(models.Model):
-    coursename = models.CharField(max_length=100)
-    courseseats = models.CharField(max_length=30)
+    coursename = models.CharField(max_length=100,null=True,blank=True)
+    courseseats = models.CharField(max_length=30,null=True,blank=True)
+    year        = models.CharField(max_length=10,null=True,blank=True)
 
     def __str__(self) -> str:
         return str(self.coursename)
 
 class OfficeStaff(models.Model):
-    name = models.CharField(max_length=30)
-    desgination   = models.CharField(max_length=50)
+    name = models.CharField(max_length=30,null=True)
+    desgination   = models.CharField(max_length=50,null=True)
 
     def __str__(self) -> str:
         return str(self.name)
 
 class AdministrativeOfficer(models.Model):
-    name = models.CharField(max_length=30)
-    desgination   = models.CharField(max_length=50)
-    image         = models.ImageField(upload_to="media/pics/administrative")
+    name = models.CharField(max_length=30,null=True)
+    desgination   = models.CharField(max_length=50,null=True)
+    image         = models.ImageField(upload_to="media/pics/administrative",null=True)
 
     def __str__(self) -> str:
         return str(self.name)
 
 class GoverningBody(models.Model):
-    name = models.CharField(max_length=30)
-    desgination   = models.CharField(max_length=50)
+    name = models.CharField(max_length=30,null=True)
+    desgination   = models.CharField(max_length=50,null=True)
 
     def __str__(self) -> str:
         return str(self.name)
 
 class librarian(models.Model):
-    name = models.CharField(max_length=100,)
-    desgination   = models.CharField(max_length=100)
-    image         = models.ImageField(upload_to="media/pics/lib")
+    name = models.CharField(max_length=100,null=True)
+    desgination   = models.CharField(max_length=100,null=True)
+    image         = models.ImageField(upload_to="media/pics/lib",null=True)
     mail_id       = models.EmailField()
-    whatsapp      = models.CharField(max_length=10)
+    whatsapp      = models.CharField(max_length=10,null=True)
 
     def __str__(self) -> str:
         return str(self.name)
 
 class AdmissionNotice(models.Model):
-    hounours_course_date = models.CharField(max_length=100)
-    program_course_date = models.CharField(max_length=100)
-    merit_publish_date = models.CharField(max_length=100)
-    carrer_counceling_date = models.CharField(max_length=100)
-    fees_payment = models.CharField(max_length=100)
-    document_verification = models.CharField(max_length=100)
-    year = models.CharField(max_length=1000)
+    hounours_course_date = models.CharField(max_length=100,null=True)
+    program_course_date = models.CharField(max_length=100,null=True)
+    merit_publish_date = models.CharField(max_length=100,null=True)
+    carrer_counceling_date = models.CharField(max_length=100,null=True)
+    fees_payment = models.CharField(max_length=100,null=True)
+    document_verification = models.CharField(max_length=100,null=True)
+    year = models.CharField(max_length=1000,null=True)
 
 class course_fee(models.Model):
-    course_name = models.CharField(max_length=100)
-    course_fee = models.CharField(max_length=100)
+    course_name = models.CharField(max_length=100,null=True)
+    course_fee = models.CharField(max_length=100,null=True)
 
     def __str__(self) -> str:
         return str(self.course_name)
 
 
 class FacultyMembers(models.Model):
-    name = models.CharField(max_length=30)
-    desgination   = models.CharField(max_length=50)
-    img      = models.ImageField(upload_to="media/pics/faculty")
-    department    = models.CharField(max_length=100)
-    specialization = models.CharField(max_length=100)
-    qualification  = models.CharField(max_length=100)
+    name = models.CharField(max_length=30,null=True)
+    desgination   = models.CharField(max_length=50,null=True,blank=True)
+    img      = models.ImageField(upload_to="media/pics/faculty",null=True,blank=True)
+    department    = models.CharField(max_length=100,null=True,blank=True)
+    specialization = models.CharField(max_length=100,null=True,blank=True)
+    qualification  = models.CharField(max_length=100,null=True,blank=True)
 
     def __str__(self) -> str:
         return str(self.name)
 
 class PublicQueryForm(models.Model):
-    first_name = models.CharField(max_length=100)
-    last_name  = models.CharField(max_length=100)
-    state_name = models.CharField(max_length=100)
-    query      = models.CharField(max_length=100)
+    first_name = models.CharField(max_length=100,null=True,blank=True)
+    last_name  = models.CharField(max_length=100,null=True,blank=True)
+    state_name = models.CharField(max_length=100,null=True,blank=True)
+    query      = models.CharField(max_length=100,null=True,blank=True)
 
     def __str__(self) -> str:
         return str(self.first_name)
 
     
+class Resource(models.Model):
+    online_public_access_catalog    = models.CharField(max_length=1000,null=True,blank=True)
+    dbm_whatsapp_group_link1        = models.CharField(max_length=1000,null=True,blank=True)
+    dbm_whatsapp_group_link2        = models.CharField(max_length=1000,null=True,blank=True)
+    dbm_lib_whatsapp_group_link3    = models.CharField(max_length=1000,null=True,blank=True)
+    wbclolr                         = models.CharField(max_length=1000,null=True,blank=True)
+    ndli                            = models.CharField(max_length=1000,null=True,blank=True)
+    internet_archive                = models.CharField(max_length=1000,null=True,blank=True)
+    
+
+    def __str__(self) -> str:
+        return "LINKS"
+class Book(models.Model):
+    department_name = models.CharField(max_length=1000,null=True,blank=True)
+    books_in_digit  = models.CharField(max_length=1000,null=True,blank=True)
+
+    def __str__(self) -> str:
+        return str(self.department_name)
+
+class ReferenceBooks(models.Model):
+    Reference_catagory = models.CharField(max_length=1000,null=True,blank=True)
+    books_available    = models.CharField(max_length=1000,null=True,blank=True)
+    def __str__(self) -> str:
+        return str(self.Reference_catagory)
+
+class MamangementMembers(models.Model):
+    slno = models.CharField(max_length=1000,null=True,blank=True)
+    name = models.CharField(max_length=1000,null=True,blank=True)
+
+    def __str__(self) -> str:
+        return str(self.name)
+
+class Canteen(models.Model):
+    image = models.ImageField(upload_to="media/pics/canteen",null=True,blank=True)
+
+    def __str__(self) -> str:
+        return "canteen image"
+
+
+class CarrerGuidence(models.Model):
+    name = models.CharField(max_length=100,null=True,blank=True)
+    link = models.CharField(max_length=1000,null=True,blank=True)
+
+    def __str__(self) -> str:
+        return str(self.name)
+
+class AcademicCalander(models.Model):
+    description = models.CharField(max_length=100,null=True,blank=True)
+    link = models.CharField(max_length=1000,null=True,blank=True)
+
+    def __str__(self) -> str:
+        return str(self.description)
+class ComputerCenter(models.Model):
+    image = models.ImageField(upload_to="media/pics/computerlab",null=True,blank=True)
+    def __str__(self) -> str:
+        return "computerlab"
+
+
+class IndexAlert(models.Model):
+    message = models.CharField(max_length=1000000)
+    def __str__(self) -> str:
+        return "index marquee msg"
+
+
+
+
+
+
+
+
+
+
 
 
     

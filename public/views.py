@@ -32,24 +32,16 @@ class AllPages():  # rendering the nav bar
             PublicQueryForm_object.query = data.get('subject')
             PublicQueryForm_object.save()
             return redirect(reverse("index"))
-        
+        if request.user.is_authenticated:
+            self.context['request'] = request.user 
         self.context['slide_img'] = SliderImage.objects.first()
         self.context['gallary_img'] = PhotoGallary.objects.first()
+        self.context['marquee']      = IndexAlert.objects.first()
         self.context['principle_img'] = PrincipleImage.objects.first()
         return render(request,"index.html",self.context)
-        
-        
-    def college(self,request):
-        
-        return render(request,"college.html")
-    
-    def academic(self,request):
-        data = FacultyMembers.objects.all()
-        
-        self.context["member"] = data
-        
-        return render(request,"academic.html",self.context)
 
+    def gallary(self,request):
+        return render(request,"gallery.html")
     def admission(self,request):
         notice_data = AdmissionNotice.objects.first()
         
@@ -57,21 +49,50 @@ class AllPages():  # rendering the nav bar
 
         return render(request,"admission.html",self.context)
 
-    def library(self,request):
-        lib_data = librarian.objects.first()
-        self.context["lib"] = lib_data
+    def gbody(self,request):
+        g_data = GoverningBody.objects.all()
+        self.context["datas"] = g_data
+        return render(request,"gbdy.html",self.context)
 
-        return render(request,"library.html",self.context)
+    def mngm(self,request):
+        obj = MamangementMembers.objects.all()
+        self.context['obj'] = obj
+        return render(request,"mngm.html",self.context)
 
-    def faculty(self,request):
+    def offst(self,request):
+        off_data = OfficeStaff.objects.all()
+        self.context['off'] = off_data
+        return render(request,"offst.html",self.context)
 
-        return render(request,"facality.html")
+    def res(self,request):
+        links = Resource.objects.first()
+        books = Book.objects.all()
+        ref_books = ReferenceBooks.objects.all()
+        self.context['res'] = links
+        self.context['book'] = books
+        self.context['ref_book'] = ref_books
+        return render(request,"res.html",self.context)
 
-#--------------------index end--------------------------
+    def depart(self,request):
+        dep_data = Courses.objects.all()
+        notice_data = AdmissionNotice.objects.first()
+        self.context['dep'] = dep_data
+        self.context["notice"] = notice_data
+        return render(request,"department.html",self.context)
+
+    def tc(self,request):
+        tc_data = TeachersCouncil.objects.all()
+        self.context['tc'] = tc_data
+        return render(request,"tc.html",self.context)
+    
+    def about(self,request):
+        
+        return render(request,"about.html")
+    
 
     def VisionMissionaryGoal(self,request):
 
-        return render(request,"vmg.html")
+        return render(request,"vision-mission.html")
 
     def affilation(self,request):
 
@@ -79,524 +100,97 @@ class AllPages():  # rendering the nav bar
 
     def iqac(self,request):
 
-        return render(request,"IQAC.html")
+        return render(request,"iqac.html")
 
-    def adof(self,request):
-        officers_data = AdministrativeOfficer.objects.all()
-        self.context['officers'] =  officers_data
-        return render(request,"adof.html",self.context)
-
-    def calander(self,request):
-
-        return render(request,"calander.html")
-
-    def cc(self,request):
-
-        return render(request,"cc.html")
-    
-    def cocourse(self,request):
-
-        return render(request,"cocourse.html")
-    
-    def cnt(self,request):
-
-        return render(request,"cnt.html")
-
-    def college(self,request):
-
-        return render(request,"college.html")
     def contact(self,request):
 
         return render(request,"contact.html")
-    def depart(self,request):
-        dep_data = Courses.objects.all()
-        self.context['dep'] = dep_data
-
-
-        return render(request,"depart.html",self.context)
-    def examstr(self,request):
-
-        return render(request,"examstr.html")
-    def feestr(self,request):
-        fee = course_fee.objects.all()
-        self.context["fee"] = fee
-
-        return render(request,"feestre.html",self.context)
-    def gbody(self,request):
-        g_data = GoverningBody.objects.all()
-        self.context["datas"] = g_data
-        
-        return render(request,"gbdy.html",self.context)
-    def mngm(self,request):
-
-        return render(request,"mngm.html")
-    def offst(self,request):
-        off_data = OfficeStaff.objects.all()
-        self.context['off'] = off_data
-        return render(request,"offst.html",self.context)
-    def res(self,request):
-
-        return render(request,"res.html")
-    def rls(self,request):
-
-        return render(request,"rls.html")
+    
     def rules(self,request):
 
-        return render(request,"rulesregulation.html")
-    def ser(self,request):
-
-        return render(request,"ser.html")
-    def signup(self,request):
-
-        return render(request,"signup.html")
-    def stad(self,request):
-
-        return render(request,"stad.html")
+        return render(request,"rules.html")
+   
     def tc(self,request):
-        tc_data = TeachersCouncil.objects.all()
-        self.context['tc'] = tc_data
-        return render(request,"tc.html",self.context)
+        return render(request,"tc.html")
+    
+    def admins(self,request):
+        return render(request,"adminis.html")
+   
+    def lib(self,request):
+        return render(request,"library.html")
+    
+    def lib_rules(self,request):
+        return render(request,"rules_.html")
+    
+    def res(self,request):
+        return render(request,"res.html")
+    def fac(self,request):
+        return render(request,"faculty.html")
+   
+    
+    def tcsion(self,request):
+        return redirect("https://www.tcsion.com/SelfServices/")
+    def onlineadmissionadija(self,request):
+        return redirect("https://dbmadmission.aadija.biz/")
+   
     
 
 
-
-
-
-
-
+ 
 class allnavs():
     def __init__(self) -> None:
         pass
 
     def college_nav(self,request,navs):
-        if navs =='Vision':
+        if navs == "about":
+            return redirect(reverse("about"))
+
+        if navs == "vision":
             return redirect(reverse("vision"))
-        
-        elif navs =='Affilation':
+        if navs == "Affilation":
             return redirect(reverse("affilation"))
 
-        elif navs =='IQAC':
+        if navs == "iqac":
             return redirect(reverse("iqac"))
 
-        elif navs =='/':
-            return redirect(reverse("index"))
-        elif navs =='faculty':
-            return redirect(reverse("faculty"))
-        elif navs =='governing':
+        if navs == "gallary":
+            return redirect(reverse("gal"))
+
+        if navs == "contactus":
+            return redirect(reverse("contact"))
+
+        if navs == "governing-body":
             return redirect(reverse("gov"))
-        elif navs =='admistrative':
+        if navs == "administrative-officers":
             return redirect(reverse("adm"))
-        elif navs =='teachers-council':
+        if navs == "Teachers-Council":
             return redirect(reverse("tc"))
-        elif navs =='officestaff':
-            return redirect(reverse("offst"))
-        else:
-            pass
-    
-    def vision_nav(self,request,navs):
-        if navs =='college':
-            return redirect(reverse("college"))
-        
-        elif navs =='affilation':
-            return redirect(reverse("affilation"))
-
-        elif navs =='IQAC':
-            return redirect(reverse("iqac"))
-
-        elif navs =='/':
-            return redirect(reverse("index"))
-        elif navs =='governing':
-            return redirect(reverse("gov"))
-        elif navs =='admistrative':
-            return redirect(reverse("adm"))
-        elif navs =='teachers-council':
-            return redirect(reverse("tc"))
-        elif navs =='officestaff':
-            return redirect(reverse("offst"))
-        else:
-            pass
-    
-    def affilation_nav(self,request,navs):
-        if navs =='college':
-            return redirect(reverse("college"))
-        
-       
-
-        elif navs =='IQAC':
-            return redirect(reverse("iqac"))
-
-        elif navs =='/':
-            return redirect(reverse("index"))
-        elif navs =='vmg':
-            return redirect(reverse("vision"))
-        elif navs =='governing':
-            return redirect(reverse("gov"))
-        elif navs =='admistrative':
-            return redirect(reverse("adm"))
-        elif navs =='teachers-council':
-            return redirect(reverse("tc"))
-        elif navs =='officestaff':
-            return redirect(reverse("offst"))
-        else:
-            pass
-
-    def iqac_nav(self,request,navs):
-        if navs =='college':
-            return redirect(reverse("college"))
-        
-        elif navs =='vmg':
-            return redirect(reverse("vision"))
-
-        elif navs =='':
-            return redirect(reverse("iqac"))
-
-        elif navs =='/':
-            return redirect(reverse("index"))
-        
-        elif navs =='aff':
-            return redirect(reverse("affilation"))
-        elif navs =='governing':
-            return redirect(reverse("gov"))
-        elif navs =='admistrative':
-            return redirect(reverse("adm"))
-        elif navs =='teachers-council':
-            return redirect(reverse("tc"))
-        elif navs =='officestaff':
-            return redirect(reverse("offst"))
-        else:
-            pass
-    def gov_nav(self,request,navs):
-        if navs =='college':
-            return redirect(reverse("college"))
-        
-        elif navs =='Vision':
-            return redirect(reverse("vision"))
-
-        elif navs =='IQAC':
-            return redirect(reverse("iqac"))
-
-        elif navs =='/':
-            return redirect(reverse("index"))
-        
-        elif navs =='Affilation':
-            return redirect(reverse("affilation"))
-        elif navs =='governing':
-            return redirect(reverse("gov"))
-        elif navs =='admistrative':
-            return redirect(reverse("adm"))
-        elif navs =='teachers-council':
-            return redirect(reverse("tc"))
-        elif navs =='officestaff':
-            return redirect(reverse("offst"))
-        else:
-            pass
-    def adm_nav(self,request,navs):
-        if navs =='college':
-            return redirect(reverse("college"))
-        
-        elif navs =='Vision':
-            return redirect(reverse("vision"))
-
-        elif navs =='IQAC':
-            return redirect(reverse("iqac"))
-
-        elif navs =='/':
-            return redirect(reverse("index"))
-        
-        elif navs =='Affilation':
-            return redirect(reverse("affilation"))
-        elif navs =='governing':
-            return redirect(reverse("gov"))
-        elif navs =='admistrative':
-            return redirect(reverse("adm"))
-        elif navs =='teachers-council':
-            return redirect(reverse("tc"))
-        elif navs =='officestaff':
-            return redirect(reverse("offst"))
-        else:
-            pass
-    def tc_nav(self,request,navs):
-        if navs =='college':
-            return redirect(reverse("college"))
-        
-        elif navs =='Vision':
-            return redirect(reverse("vision"))
-
-        elif navs =='IQAC':
-            return redirect(reverse("iqac"))
-
-        elif navs =='/':
-            return redirect(reverse("index"))
-        
-        elif navs =='Affilation':
-            return redirect(reverse("affilation"))
-        elif navs =='governing':
-            return redirect(reverse("gov"))
-        elif navs =='admistrative':
-            return redirect(reverse("adm"))
-        elif navs =='teachers-council':
-            return redirect(reverse("tc"))
-        elif navs =='officestaff':
-            return redirect(reverse("offst"))
-        else:
-            pass
-    def ofst_nav(self,request,navs):
-        if navs =='college':
-            return redirect(reverse("college"))
-        
-        elif navs =='Vision':
-            return redirect(reverse("vision"))
-
-        elif navs =='IQAC':
-            return redirect(reverse("iqac"))
-
-        elif navs =='/':
-            return redirect(reverse("index"))
-        
-        elif navs =='Affilation':
-            return redirect(reverse("affilation"))
-        elif navs =='governing':
-            return redirect(reverse("gov"))
-        elif navs =='admistrative':
-            return redirect(reverse("adm"))
-        elif navs =='teachers-council':
-            return redirect(reverse("tc"))
-        elif navs =='officestaff':
-            return redirect(reverse("offst"))
-        else:
-            pass
-
-    def academic_navs(self,request,navs):
-        if navs   == 'rules':
+        if navs == "Office-Staff":
+            return redirect(reverse("off"))
+        if navs == "Rules":
             return redirect(reverse("rules"))
-        elif navs   == 'calander':
-            return redirect(reverse("cal"))
-        elif navs   == 'departments':
+        if navs == "Department":
             return redirect(reverse("dep"))
-        elif navs =='/':
+        if navs == "Admission":
+            return redirect(reverse("admission"))
+        if navs == "About":
+            return redirect(reverse("lib_about"))
+        if navs == "Resources":
+            return redirect(reverse("res"))
+        if navs == "Rules_":
+            return redirect(reverse("rules_lib"))
+        if navs == "index.html":
             return redirect(reverse("index"))
-        else:
+        if navs == "universityresult":
+            return redirect("https://www.tcsion.com/SelfServices/")
+        if navs == "onlineAdmission":
+            return redirect("https://dbmadmission.aadija.biz/")
+        if navs == "NSCB":
+            return redirect("/")
+        if navs == "Faculty":
+            return redirect(reverse("fac"))
+
+    def login(self,request):
+        pass
         
-            pass
-    def cal_navs(self,request,navs):
-        if navs   == 'rules':
-            return redirect(reverse("rules"))
-        elif navs   == 'calander':
-            return redirect(reverse("cal"))
-        elif navs   == 'departments':
-            return redirect(reverse("dep"))
-        elif navs =='/':
-            return redirect(reverse("index"))
-        elif navs =='academic':
-            return redirect(reverse("academic"))
-        else:
         
-            pass
-    def rule_navs(self,request,navs):
-        if navs   == 'rules':
-            return redirect(reverse("rules"))
-        if navs   == 'calander':
-            return redirect(reverse("cal"))
-        if navs   == 'departments':
-            return redirect(reverse("dep"))
-        elif navs =='/':
-            return redirect(reverse("index"))
-        elif navs =='academic':
-            return redirect(reverse("academic"))
-        else:
-        
-            pass
-    def dep_navs(self,request,navs):
-        if navs   == 'rules':
-            return redirect(reverse("rules"))
-        if navs   == 'calander':
-            return redirect(reverse("cal"))
-        if navs   == 'departments':
-            return redirect(reverse("dep"))
-        elif navs =='/':
-            return redirect(reverse("index"))
-        elif navs =='academic':
-            return redirect(reverse("academic"))
-        else:
-            pass
-    def admission_navs(self,request,navs):
-        if navs =='feestructure':
-             return redirect(reverse("fees"))
-        elif navs =='carrer-oriented-course':
-             return redirect(reverse("carrer"))
-        elif navs =='exam-structure':
-             return redirect(reverse("exam"))
-        elif navs =='/':
-             return redirect(reverse("index"))
-        elif navs =='admission':
-            return redirect(reverse("admission"))
-        else:
-            pass
-    def fees_navs(self,request,navs):
-        if navs =='feestructure':
-             return redirect(reverse("fees"))
-        elif navs =='carrer-oriented-course':
-             return redirect(reverse("carrer"))
-        elif navs =='exam-structure':
-             return redirect(reverse("exam"))
-        elif navs =='/':
-             return redirect(reverse("index"))
-        elif navs =='admission':
-            return redirect(reverse("admission"))
-        else:
-            pass
-    def carrer_navs(self,request,navs):
-        if navs =='feestructure':
-             return redirect(reverse("fees"))
-        elif navs =='carrer-oriented-course':
-             return redirect(reverse("carrer"))
-        elif navs =='exam-structure':
-             return redirect(reverse("exam"))
-        elif navs =='/':
-             return redirect(reverse("index"))
-        elif navs =='admission':
-            return redirect(reverse("admission"))
-        else:
-            pass
-    def exam_navs(self,request,navs):
-        if navs =='feestructure':
-             return redirect(reverse("fees"))
-        elif navs =='carrer-oriented-course':
-             return redirect(reverse("carrer"))
-        elif navs =='exam-structure':
-             return redirect(reverse("exam"))
-        elif navs =='/':
-             return redirect(reverse("index"))
-        elif navs =='admission':
-            return redirect(reverse("admission"))
-        else:
-            pass
-
-    def library_navs(self,request,navs):
-        if navs == 'about':
-            return redirect(reverse('about_lib'))
-
-        elif navs == 'resources':
-            return redirect(reverse('resources'))
-
-       
-        elif navs == 'service':
-            return redirect(reverse('service'))
-
-       
-        elif navs == 'rules':
-            return redirect(reverse('rules_'))
-
-        elif navs == 'Management':
-            return redirect(reverse('management'))
-        elif navs == "/":
-            return redirect(reverse("index"))
-
-        else:
-            pass
-    
-    def about_navs(self,request,navs):
-        if navs == 'about':
-            return redirect(reverse('about_lib'))
-
-        elif navs == 'resources':
-            return redirect(reverse('resources'))
-
-       
-        elif navs == 'service':
-            return redirect(reverse('service'))
-
-       
-        elif navs == 'rules':
-            return redirect(reverse('rules_'))
-
-        elif navs == 'Management':
-            return redirect(reverse('management'))
-        elif navs == "/":
-            return redirect(reverse("index"))
-       
-
-        else:
-            pass
-    def res_navs(self,request,navs):
-        if navs == 'about':
-            return redirect(reverse('about_lib'))
-
-        elif navs == 'resources':
-            return redirect(reverse('resources'))
-
-       
-        elif navs == 'service':
-            return redirect(reverse('service'))
-
-       
-        elif navs == 'rules':
-            return redirect(reverse('rules_'))
-
-        elif navs == 'Management':
-            return redirect(reverse('management'))
-
-        else:
-            pass
-    def serv_navs(self,request,navs):
-        if navs == 'about':
-            return redirect(reverse('about_lib'))
-
-        elif navs == 'resources':
-            return redirect(reverse('resources'))
-
-       
-        elif navs == 'service':
-            return redirect(reverse('service'))
-
-       
-        elif navs == 'rules':
-            return redirect(reverse('rules_'))
-
-        elif navs == 'Management':
-            return redirect(reverse('management'))
-
-        else:
-            pass
-    def rules_navs(self,request,navs):
-        if navs == 'about':
-            return redirect(reverse('about_lib'))
-
-        elif navs == 'resources':
-            return redirect(reverse('resources'))
-
-       
-        elif navs == 'service':
-            return redirect(reverse('service'))
-
-       
-        elif navs == 'rules':
-            return redirect(reverse('rules_'))
-
-        elif navs == 'Management':
-            return redirect(reverse('management'))
-
-        else:
-            pass
-    def management_navs(self,request,navs):
-        if navs == 'about':
-            return redirect(reverse('about_lib'))
-
-        elif navs == 'resources':
-            return redirect(reverse('resources'))
-
-       
-        elif navs == 'service':
-            return redirect(reverse('service'))
-
-       
-        elif navs == 'rules':
-            return redirect(reverse('rules_'))
-
-        elif navs == 'Management':
-            return redirect(reverse('management'))
-
-        else:
-            pass
-
-
