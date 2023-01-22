@@ -25,5 +25,11 @@ admin.site.register(MamangementMembers)
 admin.site.register(ComputerCenter)
 admin.site.register(AcademicCalander)
 admin.site.register(IndexAlert)
+admin.site.register(Notice)
+admin.site.register(feedback)
+admin.site.register(newsletter)
+admin.site.register(notice_files)
+admin.site.register(DocumentRequired)
+
 
 
