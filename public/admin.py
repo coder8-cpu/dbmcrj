@@ -30,6 +30,8 @@ admin.site.register(feedback)
 admin.site.register(newsletter)
 admin.site.register(notice_files)
 admin.site.register(DocumentRequired)
+admin.site.register(CoursesFee)
+
 
 
 

@@ -25,7 +25,15 @@ class Courses(models.Model):
     coursename = models.CharField(max_length=100,null=True,blank=True)
     courseseats = models.CharField(max_length=30,null=True,blank=True)
     year        = models.CharField(max_length=10,null=True,blank=True)
+    
+    def __str__(self) -> str:
+        return str(self.coursename)
 
+class CoursesFee(models.Model):
+    coursename = models.CharField(max_length=100,null=True,blank=True)
+    coursefee = models.CharField(max_length=30,null=True,blank=True)
+    year        = models.CharField(max_length=10,null=True,blank=True)
+    
     def __str__(self) -> str:
         return str(self.coursename)
 
@@ -100,17 +108,21 @@ class PublicQueryForm(models.Model):
 
     
 class Resource(models.Model):
-    online_public_access_catalog    = models.CharField(max_length=1000,null=True,blank=True)
-    dbm_whatsapp_group_link1        = models.CharField(max_length=1000,null=True,blank=True)
-    dbm_whatsapp_group_link2        = models.CharField(max_length=1000,null=True,blank=True)
-    dbm_lib_whatsapp_group_link3    = models.CharField(max_length=1000,null=True,blank=True)
-    wbclolr                         = models.CharField(max_length=1000,null=True,blank=True)
-    ndli                            = models.CharField(max_length=1000,null=True,blank=True)
-    internet_archive                = models.CharField(max_length=1000,null=True,blank=True)
+    label    = models.CharField(max_length=1000,null=True,blank=True)
+    link     = models.CharField(max_length=1000,null=True,blank=True)
+    file     = models.FileField()
+
+    # online_public_access_catalog    = models.CharField(max_length=1000,null=True,blank=True)
+    # dbm_whatsapp_group_link1        = models.CharField(max_length=1000,null=True,blank=True)
+    # dbm_whatsapp_group_link2        = models.CharField(max_length=1000,null=True,blank=True)
+    # dbm_lib_whatsapp_group_link3    = models.CharField(max_length=1000,null=True,blank=True)
+    # wbclolr                         = models.CharField(max_length=1000,null=True,blank=True)
+    # ndli                            = models.CharField(max_length=1000,null=True,blank=True)
+    # internet_archive                = models.CharField(max_length=1000,null=True,blank=True)
     
 
     def __str__(self) -> str:
-        return "LINKS"
+        return str(self.label)
 class Book(models.Model):
     department_name = models.CharField(max_length=1000,null=True,blank=True)
     books_in_digit  = models.CharField(max_length=1000,null=True,blank=True)

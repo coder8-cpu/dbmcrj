@@ -54,7 +54,7 @@ class AllPages():
         return render(request,"gallery.html",self.context)
     def admission(self,request):
         notice_data = AdmissionNotice.objects.first()
-        courses     = Courses.objects.all()
+        courses     = CoursesFee.objects.all()
         docs        = DocumentRequired.objects.all()
         notice_file = notice_files.objects.all()
         
@@ -65,7 +65,14 @@ class AllPages():
 
         return render(request,"admission.html",self.context)
     def adm_query(self,request):
-        pass
+        obj = PublicQueryForm()
+        data = request.POST
+        obj.name = data.get('name')
+        obj.email = data.get('email')
+        obj.subject = data.get('mobileno')
+        obj.query = data.get('message')
+        obj.save()
+        return redirect(reverse("admission"))
     def gbody(self,request):
         g_data = GoverningBody.objects.all()
         self.context["datas"] = g_data
@@ -150,9 +157,19 @@ class AllPages():
         return render(request,"rules_.html")
     
     def res(self,request):
-        return render(request,"res.html")
+        data = Resource.objects.all()
+        books = Book.objects.all()
+        ref_book = ReferenceBooks.objects.all()
+        self.context['data'] = data
+        self.context['ref_book'] = ref_book
+        self.context['book'] = books 
+        return render(request,"res.html",self.context)
     def fac(self,request):
-        return render(request,"faculty.html")
+        fac = FacultyMembers.objects.filter(department="English")
+        
+        self.context["english"] = fac
+
+        return render(request,"faculty.html",self.context)
    
     
     def tcsion(self,request):

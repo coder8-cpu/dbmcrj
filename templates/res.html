@@ -127,14 +127,12 @@
                 
                     <h2 class="mb-4">Important Links</h2>
                     <ul class="list-group list-group-flush">
+                        {%for i in data%}
                         <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                            <a href="">Online Form Fllup Start</a>
+                            <a href="{{i.link}}">{{i.label}}</a>
                             
                         </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                            <a href="">Online Form Fllup Start</a>
-                            
-                        </li>
+                        {%endfor%}
                     </ul>
                     <h3 class="mb-4">Available Books</h3>
                     <ul class="list-group list-group-flush">
@@ -142,10 +140,12 @@
                             <a>Books Stream</a>
                             <span class="badge badge-primary badge-pill">Available Books</span>
                         </li>
+                        {%for i in book%}
                         <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                            <a href="">Computer Science</a>
-                            <span class="badge badge-primary badge-pill">274</span>
+                            <a href="">{{i.department_name}}</a>
+                            <span class="badge badge-primary badge-pill">{{i.books_in_digit}}</span>
                         </li>
+                        {%endfor%}
                         
                     </ul>
                     </div>
@@ -159,74 +159,16 @@
                     <h2 class="mb-4">Reference Books</h2>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                            <a>Course Name</a>
-                            <span class="badge badge-primary badge-pill">Course Fee</span>
+                            <a>Book Stream</a>
+                            <span class="badge badge-primary badge-pill">Books Available</span>
                         </li>
+                        {%for i in ref_book%}
                         <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                            <a href="">Web Design</a>
-                            <span class="badge badge-primary badge-pill">150</span>
+                            <a href="">{{i.Reference_catagory}}</a>
+                            <span class="badge badge-primary badge-pill">{{i.books_available}}.</span>
                         </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                            <a href="">Web Development</a>
-                            <span class="badge badge-primary badge-pill">131</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                            <a href="">Online Marketing</a>
-                            <span class="badge badge-primary badge-pill">78</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                            <a href="">Keyword Research</a>
-                            <span class="badge badge-primary badge-pill">56</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                            <a href="">Email Marketing</a>
-                            <span class="badge badge-primary badge-pill">98</span>
-                        </li>
-
-                        <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                            <a href="">Email Marketing</a>
-                            <span class="badge badge-primary badge-pill">98</span>
-                        </li>
-
-                        <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                            <a href="">Email Marketing</a>
-                            <span class="badge badge-primary badge-pill">98</span>
-                        </li>
-
-                        <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                            <a href="">Email Marketing</a>
-                            <span class="badge badge-primary badge-pill">98</span>
-                        </li>
-
-                        <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                            <a href="">Email Marketing</a>
-                            <span class="badge badge-primary badge-pill">98</span>
-                        </li>
-
-                        <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                            <a href="">Email Marketing</a>
-                            <span class="badge badge-primary badge-pill">98</span>
-                        </li>
-
-                        <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                            <a href="">Email Marketing</a>
-                            <span class="badge badge-primary badge-pill">98</span>
-                        </li>
-
-                        <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                            <a href="">Email Marketing</a>
-                            <span class="badge badge-primary badge-pill">98</span>
-                        </li>
-
-                        <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                            <a href="">Email Marketing</a>
-                            <span class="badge badge-primary badge-pill">98</span>
-                        </li>
-
-                        <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                            <a href="">Email Marketing</a>
-                            <span class="badge badge-primary badge-pill">98</span>
-                        </li>
+                        {%endfor%}
+                        
                     </ul>
                 </div>
 

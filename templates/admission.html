@@ -178,7 +178,7 @@
                         <div class="d-flex align-items-center bg-light shadow-sm rounded overflow-hidden mx-3">
                            
                             <div class="pl-3">
-                                <h5 class="">{{i.lable}}</h5>
+                                <h5 class="">{{i.label}}</h5>
                                 <div class="d-flex">
                                     <small class="mr-3"><i class="fa fa-user text-primary"></i><a href="{{i.file.url}}" download>File</a></small>
                                     
@@ -196,6 +196,8 @@
                 <div class="bg-light p-5">
                     <h2 class="mb-4">Need Help, Contact Us</h2>
                     <form action="admission-query/" method="post">
+
+                        {% csrf_token %}
                         <div class="form-group">
                             <label for="name">Name *</label>
                             <input type="text" class="form-control" id="name" name="name">
@@ -238,71 +240,15 @@
                             <a>Course Name</a>
                             <span class="badge badge-primary badge-pill">Course Fee</span>
                         </li>
+                        {%for i in course%}
                         <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                            <a href="">Web Design</a>
-                            <span class="badge badge-primary badge-pill">150</span>
+                            <a href="">{{i.coursename}}</a>
+                            <span class="badge badge-primary badge-pill">{{i.coursefee}}</span>
                         </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                            <a href="">Web Development</a>
-                            <span class="badge badge-primary badge-pill">131</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                            <a href="">Online Marketing</a>
-                            <span class="badge badge-primary badge-pill">78</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                            <a href="">Keyword Research</a>
-                            <span class="badge badge-primary badge-pill">56</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                            <a href="">Email Marketing</a>
-                            <span class="badge badge-primary badge-pill">98</span>
-                        </li>
+                        {%endfor%}
+                        
 
-                        <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                            <a href="">Email Marketing</a>
-                            <span class="badge badge-primary badge-pill">98</span>
-                        </li>
-
-                        <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                            <a href="">Email Marketing</a>
-                            <span class="badge badge-primary badge-pill">98</span>
-                        </li>
-
-                        <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                            <a href="">Email Marketing</a>
-                            <span class="badge badge-primary badge-pill">98</span>
-                        </li>
-
-                        <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                            <a href="">Email Marketing</a>
-                            <span class="badge badge-primary badge-pill">98</span>
-                        </li>
-
-                        <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                            <a href="">Email Marketing</a>
-                            <span class="badge badge-primary badge-pill">98</span>
-                        </li>
-
-                        <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                            <a href="">Email Marketing</a>
-                            <span class="badge badge-primary badge-pill">98</span>
-                        </li>
-
-                        <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                            <a href="">Email Marketing</a>
-                            <span class="badge badge-primary badge-pill">98</span>
-                        </li>
-
-                        <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                            <a href="">Email Marketing</a>
-                            <span class="badge badge-primary badge-pill">98</span>
-                        </li>
-
-                        <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                            <a href="">Email Marketing</a>
-                            <span class="badge badge-primary badge-pill">98</span>
-                        </li>
+                        
                     </ul>
                 </div>
 
