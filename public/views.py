@@ -154,9 +154,12 @@ class AllPages():
         return render(request,"adminis.html",self.context)
    
     def lib(self,request):
-        return render(request,"library.html")
+        l = librarian.objects.first()
+        self.context['lib'] = l
+        return render(request,"library.html",self.context)
     
     def lib_rules(self,request):
+        
         return render(request,"rules_.html")
     
     def res(self,request):
@@ -169,8 +172,40 @@ class AllPages():
         return render(request,"res.html",self.context)
     def fac(self,request):
         fac = FacultyMembers.objects.filter(department="English")
+        fac1 = FacultyMembers.objects.filter(department="Bengali")
+        fac2 = FacultyMembers.objects.filter(department="Mathematics")
+        fac3 = FacultyMembers.objects.filter(department="Physics")
+        fac4 = FacultyMembers.objects.filter(department="Chemistry")
+        fac5 = FacultyMembers.objects.filter(department="Computer Science")
+        fac6 = FacultyMembers.objects.filter(department="Sanskrit")
+        fac7 = FacultyMembers.objects.filter(department="Geography")
+        fac8 = FacultyMembers.objects.filter(department="Economics")
+        fac9 = FacultyMembers.objects.filter(department="Political Science")
+        fac10 = FacultyMembers.objects.filter(department="Commerse")
+        fac11 = FacultyMembers.objects.filter(department="BBA")
+        fac12 = FacultyMembers.objects.filter(department="BCA")
+        fac13 = FacultyMembers.objects.filter(department="Philosophy")
+        fac14 = FacultyMembers.objects.filter(department="Education")
+        fac15 = FacultyMembers.objects.filter(department="Hindi")
+        fac16 = FacultyMembers.objects.filter(department="History")
         
         self.context["english"] = fac
+        self.context["Bengali"] = fac1
+        self.context["Mathematics"] = fac2
+        self.context["Physics"] = fac3
+        self.context["Chemistry"] = fac4
+        self.context["ComputerScience"] = fac5
+        self.context["Sanskrit"] = fac6
+        self.context["Geography"] = fac7
+        self.context["Economics"] = fac8
+        self.context["PoliticalScience"] = fac9
+        self.context["Commerse"] = fac10
+        self.context["BBA"] = fac11
+        self.context["BCA"] = fac12
+        self.context["Philosophy"] = fac13
+        self.context["Education"] = fac14
+        self.context["Hindi"] = fac15
+        self.context["History"] = fac16
 
         return render(request,"faculty.html",self.context)
    

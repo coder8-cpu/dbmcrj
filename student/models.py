@@ -8,6 +8,9 @@ class StudentSignup(models.Model):
     name = models.CharField(max_length=1000,null=True,blank=True)
     password = models.CharField(max_length=1000000,null=True,blank=True)
 
+
+
+
 class StudentData(models.Model):
     
     year = models.CharField(max_length=1000,null=True,blank=True)
@@ -92,6 +95,10 @@ class RegisterRollNo(models.Model):
 
     def __str__(self) -> str:
         return str(self.name)
+
+class studentfriends(models.Model):
+    pass
+
         
 
 

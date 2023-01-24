@@ -8,16 +8,16 @@ s = Signup()
 l = Login()
 g = geo_locate()
 urlpatterns= [
-    path("dashboard/",g.get_lat_long),
-    path("d-ashboard/",d.show_dashboard,name="dashboard"),
+    
+    path("dashboard/",d.show_dashboard,name="dashboard"),
    
     
     path("signup/",s.show_signup,name="signup"),
     path("signup/login/",s.redirect_login,name=""),
     path("signup/createnew/",s.createuser),
     path("login/",l.show_login,name="login"),
-    path("d-ashboard/home/",home,name=""),
-    path("d-ashboard/logout/",logout,name=""),
+    path("dashboard/home/",home,name=""),
+    path("dashboard/logout/",logout,name=""),
    
     path("login/verify/",l.verify_login,name=""),
     path("login/signup/",s.redirect_signup,name="")

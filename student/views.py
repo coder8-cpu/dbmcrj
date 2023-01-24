@@ -42,30 +42,59 @@ class Dashboard():
             self.studentname = StudentData.objects.get(rollno=request.session.get('user'))
             self.routine = routine.objects.filter(year=dt.date.today().year,course_type=self.studentname.course_type,semester=self.studentname.semester,branch=self.studentname.branch,day=self.day)
             self.notifications = notice_files.objects.all()
-            self.marksheet = Marksheets.objects.get(year=dt.date.today().year,course_type=self.studentname.course_type,semester=self.studentname.semester,branch=self.studentname.branch,roll=request.session.get('user'))
-            self.registrationno = Registration.objects.get(year=dt.date.today().year,course_type=self.studentname.course_type,semester=self.studentname.semester,branch=self.studentname.branch,roll=request.session.get('user'))
-            self.admit = AdmitCard.objects.get(year=dt.date.today().year,course_type=self.studentname.course_type,semester=self.studentname.semester,branch=self.studentname.branch,roll=request.session.get('user'))
-            self.exam = ExamRoutine.objects.get(year=dt.date.today().year,course_type=self.studentname.course_type,semester=self.studentname.semester,branch=self.studentname.branch,)
-            self.syl = Syllabus.objects.get(year=dt.date.today().year,course_type=self.studentname.course_type,semester=self.studentname.semester,branch=self.studentname.branch,)
+            self.marksheet = Marksheets.objects.filter(year=dt.date.today().year,course_type=self.studentname.course_type,semester=self.studentname.semester,branch=self.studentname.branch,roll=request.session.get('user'))
+            self.registrationno = Registration.objects.filter(year=dt.date.today().year,course_type=self.studentname.course_type,semester=self.studentname.semester,branch=self.studentname.branch,roll=request.session.get('user'))
+            self.admit = AdmitCard.objects.filter(year=dt.date.today().year,course_type=self.studentname.course_type,semester=self.studentname.semester,branch=self.studentname.branch,roll=request.session.get('user'))
+            self.exam = ExamRoutine.objects.filter(year=dt.date.today().year,course_type=self.studentname.course_type,semester=self.studentname.semester,branch=self.studentname.branch,)
+            self.syl = Syllabus.objects.filter(year=dt.date.today().year,course_type=self.studentname.course_type,semester=self.studentname.semester,branch=self.studentname.branch,)
             lenght = self.notifications.count()
+            if self.marksheet.exists():
+            
+                self.context["marksheet"] = self.marksheet[0]
+                self.context["sem"] = self.marksheet[0].semester
+            else:
+                self.context["marksheet"] = self.marksheet
+                self.context["sem"] = self.studentname.semester
+            
+            if self.admit.exists():
+            
+                self.context["admit"] = self.admit[0]
+            else:
+                self.context["admit"] = self.admit
+            
+            if self.registrationno.exists():
+                   self.context["reg"] = self.registrationno[0]
+               
+            else:
+                  self.context["reg"] = self.registrationno
+                
+            if self.registrationno.exists():
+                  
+                self.context["exam"] = self.exam[0]
+            else:
+                self.context["exam"] = self.exam
+            
+            if self.syl.exists():
+                  
+                self.context["syl"] = self.syl[0]
+            else:
+                self.context["syl"] = self.syl
+
+            
+            
+            
             self.context["routine"] = self.routine
             self.context["day"] = self.day
-            self.context["dee"] = dee
             self.context["lenght"] = lenght
-            self.context["marksheet"] = self.marksheet
-            self.context["reg"] = self.registrationno
-            self.context["admit"] = self.admit
-            self.context["sem"] = self.marksheet.semester
-            self.context["syl"] = self.syl
-            self.context["exam"] = self.exam
             self.context["notifications"] = self.notifications
             self.context["name"] = self.studentname.name
             self.context["branch"] = self.studentname.branch
             self.context["year"] = self.studentname.year
-            return render(request,"final.html",self.context)
+            return render(request,"dashboard.html",self.context)
         return redirect(reverse("index"))
    
 def home(request):
+    
     return redirect(reverse("index"))
 
 class geo_locate:
@@ -95,6 +124,11 @@ class Signup():
     def __init__(self) -> None:
         pass
     def show_signup(self,request):
+        if request.user.is_authenticated:
+            return redirect(reverse("dashboard"))
+
+
+
         return render(request,"signup.html")
     def createuser(self,request):
         data = request.POST
