@@ -57,6 +57,7 @@ class Dashboard():
             self.context["admit"] = self.admit
             self.context["sem"] = self.marksheet.semester
             self.context["syl"] = self.syl
+            self.context["exam"] = self.exam
             self.context["notifications"] = self.notifications
             self.context["name"] = self.studentname.name
             self.context["branch"] = self.studentname.branch
@@ -97,15 +98,15 @@ class Signup():
         return render(request,"signup.html")
     def createuser(self,request):
         data = request.POST
-        roll = RegisterRollNo.objects.filter(rollno=data.get('rollno'))
+        roll = RegisterRollNo.objects.filter(name=data.get('roll'))
         if roll.exists():
             signup_data = StudentSignup()
             signup_data.name = data.get('name')
-            signup_data.Rollno = data.get('rollno')
+            signup_data.Rollno = data.get('roll')
             signup_data.password = make_password(data.get('password'))
             signup_data.save()
             user = User()
-            user.username = data.get('rollno')
+            user.username = data.get('roll')
             user.set_password = data.get('password')
             user.save()
             return redirect(reverse("login"))

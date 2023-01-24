@@ -70,7 +70,7 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form" action="verify/" method="post">
+				<form class="login100-form validate-form" action="createnew/" method="post">
                     {% csrf_token %}
 					<span class="login100-form-title p-b-43">
 						Welcome, Signup
@@ -78,7 +78,13 @@
 					
 					
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="tel" name="roll" >
+						<input class="input100" type="text" name="name" >
+						<span class="focus-input100"></span>
+						<span class="label-input100">Name</span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						<input class="input100" type="text" name="roll" >
 						<span class="focus-input100"></span>
 						<span class="label-input100">Rollno...</span>
 					</div>
@@ -90,20 +96,7 @@
 						<span class="label-input100">Password</span>
 					</div>
 
-					<div class="flex-sb-m w-full p-t-3 p-b-32">
-						<div class="contact100-form-checkbox">
-							<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
-							<label class="label-checkbox100" for="ckb1">
-								Remember me
-							</label>
-						</div>
-
-						<div>
-							<a href="#" class="txt1">
-								Forgot Password?
-							</a>
-						</div>
-					</div>
+					
 			
 
 					<div class="container-login100-form-btn">
