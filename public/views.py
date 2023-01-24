@@ -33,6 +33,9 @@ class AllPages():
             return redirect(reverse("index"))
         if request.user.is_authenticated:
             self.context['request'] = request.user 
+        else:
+             self.context['request'] = "Login"
+
 
         self.context['slide_img'] = SliderImage.objects.all()
         
@@ -232,7 +235,9 @@ class allnavs():
         if navs == "NSCB":
             return redirect("/")
         if navs == "Faculty":
+        
             return redirect(reverse("fac"))
+       
 
     
         

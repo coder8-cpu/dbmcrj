@@ -200,8 +200,6 @@ class DocumentRequired(models.Model):
     label = models.CharField(max_length=1000)
 
 
-class AdmissionQuery(models.Model):
-    pass
 
 
 

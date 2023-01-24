@@ -101,7 +101,11 @@
                     
                 </div>
                
-                <a href="login/" class="btn btn-primary px-4">Log in</a>
+                 {%if request == 'Login'%}
+                        <a href="students/login/" class="btn btn-primary px-4">{{request}}</a>
+                    {%else%}
+                    <a href="students/dashboard/" class="btn btn-primary px-4">Dashboard</a>
+                    {%endif%}
             </div>
         </nav>
     </div>
