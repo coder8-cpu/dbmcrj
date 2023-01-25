@@ -3,49 +3,60 @@ from django.db import models
 # Create your models here.
 
 class SliderImage(models.Model):
-    img1 = models.ImageField(upload_to="media/pics/slider",null=True,blank=True)
-    event = models.CharField(max_length=30,null=True,blank=True)
+    img1           = models.ImageField(upload_to="media/pics/slider",null=True,blank=True)
+    event          = models.CharField(max_length=30,null=True,blank=True)
+
+    def __str__(self) -> str:
+        return str(self.event)
 
 class PrincipleImage(models.Model):
     principle_name = models.CharField(max_length=30,null=True,blank=True)
-    img1 = models.ImageField(upload_to="media/pics/principle",null=True,blank=True)
+    img1           = models.ImageField(upload_to="media/pics/principle",null=True,blank=True)
+
+    def __str__(self) -> str:
+        return str(self.principle_name)
+
 
 class PhotoGallary(models.Model):
-    img1 = models.ImageField(upload_to="media/pics/gallary",null=True,blank=True)
+    img1           = models.ImageField(upload_to="media/pics/gallary",null=True,blank=True)
+
+    def __str__(self) -> str:
+        return "Photos"
+
     
 class TeachersCouncil(models.Model):
-    name = models.CharField(max_length=30,null=True,blank=True)
-    qualification = models.CharField(max_length=50,null=True,blank=True)
-    desgination   = models.CharField(max_length=50,null=True,blank=True)
+    name           = models.CharField(max_length=30,null=True,blank=True)
+    qualification  = models.CharField(max_length=50,null=True,blank=True)
+    desgination    = models.CharField(max_length=50,null=True,blank=True)
 
     def __str__(self) -> str:
         return str(self.name)
 
 class Courses(models.Model):
-    coursename = models.CharField(max_length=100,null=True,blank=True)
-    courseseats = models.CharField(max_length=30,null=True,blank=True)
-    year        = models.CharField(max_length=10,null=True,blank=True)
+    coursename     = models.CharField(max_length=100,null=True,blank=True)
+    courseseats    = models.CharField(max_length=30,null=True,blank=True)
+    year           = models.CharField(max_length=10,null=True,blank=True)
     
     def __str__(self) -> str:
         return str(self.coursename)
 
 class CoursesFee(models.Model):
-    coursename = models.CharField(max_length=100,null=True,blank=True)
-    coursefee = models.CharField(max_length=30,null=True,blank=True)
-    year        = models.CharField(max_length=10,null=True,blank=True)
+    coursename   = models.CharField(max_length=100,null=True,blank=True)
+    coursefee    = models.CharField(max_length=30,null=True,blank=True)
+    year         = models.CharField(max_length=10,null=True,blank=True)
     
     def __str__(self) -> str:
         return str(self.coursename)
 
 class OfficeStaff(models.Model):
-    name = models.CharField(max_length=30,null=True)
+    name          = models.CharField(max_length=30,null=True)
     desgination   = models.CharField(max_length=50,null=True)
 
     def __str__(self) -> str:
         return str(self.name)
 
 class AdministrativeOfficer(models.Model):
-    name = models.CharField(max_length=30,null=True)
+    name          = models.CharField(max_length=30,null=True)
     desgination   = models.CharField(max_length=50,null=True)
     image         = models.ImageField(upload_to="media/pics/administrative",null=True)
 
@@ -53,14 +64,14 @@ class AdministrativeOfficer(models.Model):
         return str(self.name)
 
 class GoverningBody(models.Model):
-    name = models.CharField(max_length=30,null=True)
+    name          = models.CharField(max_length=30,null=True)
     desgination   = models.CharField(max_length=50,null=True)
 
     def __str__(self) -> str:
         return str(self.name)
 
 class librarian(models.Model):
-    name = models.CharField(max_length=100,null=True)
+    name          = models.CharField(max_length=100,null=True)
     desgination   = models.CharField(max_length=100,null=True)
     image         = models.ImageField(upload_to="media/pics/lib",null=True)
     mail_id       = models.EmailField()
@@ -70,27 +81,31 @@ class librarian(models.Model):
         return str(self.name)
 
 class AdmissionNotice(models.Model):
-    hounours_course_date = models.CharField(max_length=100,null=True)
-    program_course_date = models.CharField(max_length=100,null=True)
-    merit_publish_date = models.CharField(max_length=100,null=True)
-    carrer_counceling_date = models.CharField(max_length=100,null=True)
-    fees_payment = models.CharField(max_length=100,null=True)
-    document_verification = models.CharField(max_length=100,null=True)
-    year = models.CharField(max_length=1000,null=True)
+    hounours_course_date     = models.CharField(max_length=100,null=True)
+    program_course_date      = models.CharField(max_length=100,null=True)
+    merit_publish_date       = models.CharField(max_length=100,null=True)
+    carrer_counceling_date   = models.CharField(max_length=100,null=True)
+    fees_payment             = models.CharField(max_length=100,null=True)
+    document_verification    = models.CharField(max_length=100,null=True)
+    year                     = models.CharField(max_length=1000,null=True)
+
+    def __str__(self) -> str:
+        return str(self.year)
+
 
 class course_fee(models.Model):
-    course_name = models.CharField(max_length=100,null=True)
-    course_fee = models.CharField(max_length=100,null=True)
+    course_name   = models.CharField(max_length=100,null=True)
+    course_fee    = models.CharField(max_length=100,null=True)
 
     def __str__(self) -> str:
         return str(self.course_name)
 
 
 class FacultyMembers(models.Model):
-    name = models.CharField(max_length=30,null=True)
+    name          = models.CharField(max_length=30,null=True)
     desgination   = models.CharField(max_length=50,null=True,blank=True)
-    img      = models.ImageField(upload_to="media/pics/faculty",null=True,blank=True)
-    department    = models.CharField(max_length=100,null=True,blank=True)
+    img           = models.ImageField(upload_to="media/pics/faculty",null=True,blank=True)
+    department     = models.CharField(max_length=100,null=True,blank=True)
     specialization = models.CharField(max_length=100,null=True,blank=True)
     qualification  = models.CharField(max_length=100,null=True,blank=True)
 
@@ -100,11 +115,11 @@ class FacultyMembers(models.Model):
 class PublicQueryForm(models.Model):
     name = models.CharField(max_length=100,null=True,blank=True)
     email  = models.CharField(max_length=100,null=True,blank=True)
-    subject = models.CharField(max_length=100,null=True,blank=True)
+    subject  = models.CharField(max_length=100,null=True,blank=True)
     query      = models.CharField(max_length=100,null=True,blank=True)
 
     def __str__(self) -> str:
-        return str(self.first_name)
+        return str(self.name)
 
     
 class Resource(models.Model):
@@ -112,14 +127,7 @@ class Resource(models.Model):
     link     = models.CharField(max_length=1000,null=True,blank=True)
     file     = models.FileField()
 
-    # online_public_access_catalog    = models.CharField(max_length=1000,null=True,blank=True)
-    # dbm_whatsapp_group_link1        = models.CharField(max_length=1000,null=True,blank=True)
-    # dbm_whatsapp_group_link2        = models.CharField(max_length=1000,null=True,blank=True)
-    # dbm_lib_whatsapp_group_link3    = models.CharField(max_length=1000,null=True,blank=True)
-    # wbclolr                         = models.CharField(max_length=1000,null=True,blank=True)
-    # ndli                            = models.CharField(max_length=1000,null=True,blank=True)
-    # internet_archive                = models.CharField(max_length=1000,null=True,blank=True)
-    
+   
 
     def __str__(self) -> str:
         return str(self.label)
@@ -159,12 +167,12 @@ class CarrerGuidence(models.Model):
 
 class AcademicCalander(models.Model):
     description = models.CharField(max_length=100,null=True,blank=True)
-    link = models.CharField(max_length=1000,null=True,blank=True)
+    link        = models.CharField(max_length=1000,null=True,blank=True)
 
     def __str__(self) -> str:
         return str(self.description)
 class ComputerCenter(models.Model):
-    image = models.ImageField(upload_to="media/pics/computerlab",null=True,blank=True)
+    image       = models.ImageField(upload_to="media/pics/computerlab",null=True,blank=True)
     def __str__(self) -> str:
         return "computerlab"
 
@@ -179,14 +187,18 @@ class Notice(models.Model):
     notice_title = models.CharField(max_length=200)
     notice_details = models.CharField(max_length=200)
     notice_link_name = models.CharField(max_length=200,null=True,blank=True)
-    notice_file = models.FileField(upload_to="media/notice/files",null=True,blank=True)
+    notice_file        = models.FileField(upload_to="media/notice/files",null=True,blank=True)
 
 class feedback(models.Model):
-    name = models.CharField(max_length=200)
-    msg = models.CharField(max_length=200)
+    name  = models.CharField(max_length=200)
+    msg   = models.CharField(max_length=200)
+
+    def __str__(self) -> str:
+        return str(self.name)
+
 
 class newsletter(models.Model):
-    name = models.CharField(max_length=200)
+    name  = models.CharField(max_length=200)
     email = models.CharField(max_length=200)
 
     def __str__(self) -> str:
@@ -196,8 +208,15 @@ class notice_files(models.Model):
     label = models.CharField(max_length=100)
     file  = models.FileField()
 
+    def __str__(self) -> str:
+        return str(self.label)
+
 class DocumentRequired(models.Model):
     label = models.CharField(max_length=1000)
+    
+    def __str__(self) -> str:
+        return str(self.label)
+
 
 
 
