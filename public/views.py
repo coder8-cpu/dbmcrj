@@ -25,90 +25,95 @@ class AllPages():
     def index(self,request):
         if request.method == 'POST':
             data = request.POST
-            PublicQueryForm_object = feedback()
+            PublicQueryForm_object      = feedback()
             PublicQueryForm_object.name = data.get('name')
-            PublicQueryForm_object.msg = data.get('msg')
-           
+            PublicQueryForm_object.msg  = data.get('msg')
             PublicQueryForm_object.save()
             return redirect(reverse("index"))
+
         if request.user.is_authenticated:
             self.context['request'] = request.user 
         else:
-             self.context['request'] = "Login"
-
+            self.context['request'] = "Login"
 
         self.context['slide_img'] = SliderImage.objects.all()
-        
         self.context['mark']      = IndexAlert.objects.all()
-        self.context['notice']      = Notice.objects.all()
+        self.context['notice']    = Notice.objects.all()
         self.context['principle'] = PrincipleImage.objects.first()
-        self.context['feedback'] = feedback.objects.all()
+        self.context['feedback']  = feedback.objects.all()
         
         return render(request,"index.html",self.context)
     def newsletter(self,request):
-        data = request.POST
-        news = newsletter()
-        news.name = data.get('name')
+
+        data       = request.POST
+        news       = newsletter()
+        news.name  = data.get('name')
         news.email = data.get('email')
         news.save()
         return redirect(reverse("index"))
+
     def gallary(self,request):
+
         self.context['gallary_img'] = PhotoGallary.objects.all()
         return render(request,"gallery.html",self.context)
+
     def admission(self,request):
-        notice_data = AdmissionNotice.objects.first()
-        courses     = CoursesFee.objects.all()
-        docs        = DocumentRequired.objects.all()
-        notice_file = notice_files.objects.all()
-        
+
+        notice_data            = AdmissionNotice.objects.first()
+        courses                = CoursesFee.objects.all()
+        docs                   = DocumentRequired.objects.all()
+        notice_file            = notice_files.objects.all()
         self.context["notice"] = notice_data
         self.context["course"] = courses
-        self.context["doc"] = docs
-        self.context["files"] = notice_file
-
+        self.context["doc"]    = docs
+        self.context["files"]  = notice_file
         return render(request,"admission.html",self.context)
+
     def adm_query(self,request):
-        obj = PublicQueryForm()
-        data = request.POST
-        obj.name = data.get('name')
-        obj.email = data.get('email')
+
+        obj         = PublicQueryForm()
+        data        = request.POST
+        obj.name    = data.get('name')
+        obj.email   = data.get('email')
         obj.subject = data.get('mobileno')
-        obj.query = data.get('message')
+        obj.query   = data.get('message')
         obj.save()
         return redirect(reverse("admission"))
+
     def gbody(self,request):
-        g_data = GoverningBody.objects.all()
+
+        g_data                = GoverningBody.objects.all()
         self.context["datas"] = g_data
         return render(request,"gbdy.html",self.context)
 
     def mngm(self,request):
-        obj = MamangementMembers.objects.all()
+        obj                 = MamangementMembers.objects.all()
         self.context['obj'] = obj
         return render(request,"mngm.html",self.context)
 
     def offst(self,request):
-        off_data = OfficeStaff.objects.all()
+        off_data            = OfficeStaff.objects.all()
         self.context['off'] = off_data
         return render(request,"offst.html",self.context)
 
     def res(self,request):
-        links = Resource.objects.first()
-        books = Book.objects.all()
-        ref_books = ReferenceBooks.objects.all()
-        self.context['res'] = links
-        self.context['book'] = books
+        links                    = Resource.objects.first()
+        books                    = Book.objects.all()
+        ref_books                = ReferenceBooks.objects.all()
+        self.context['res']      = links
+        self.context['book']     = books
         self.context['ref_book'] = ref_books
         return render(request,"res.html",self.context)
 
     def depart(self,request):
-        dep_data = Courses.objects.all()
+        dep_data            = Courses.objects.all()
         
         self.context['dep'] = dep_data
        
         return render(request,"department.html",self.context)
 
     def tc(self,request):
-        tc_data = TeachersCouncil.objects.all()
+        tc_data            = TeachersCouncil.objects.all()
         self.context['tc'] = tc_data
         return render(request,"tc.html",self.context)
     
@@ -130,13 +135,15 @@ class AllPages():
         return render(request,"iqac.html")
 
     def contact(self,request):
+
         if request.method == 'POST':
-            data = PublicQueryForm()
-            data.name = request.POST.get('name')
-            data.email = request.POST.get('email')
+            data         = PublicQueryForm()
+            data.name    = request.POST.get('name')
+            data.email   = request.POST.get('email')
             data.subject = request.POST.get('subject')
             data.message = request.POST.get('message')
             return redirect(reverse("contact"))
+
         return render(request,"contact.html")
     
     def rules(self,request):
@@ -144,39 +151,76 @@ class AllPages():
         return render(request,"rules.html")
    
     def tc(self,request):
-        tc = TeachersCouncil.objects.all()
+        tc                = TeachersCouncil.objects.all()
         self.context['t'] = tc
         return render(request,"tc.html",self.context)
     
     def admins(self,request):
-        datas = AdministrativeOfficer.objects.all()
+        datas                = AdministrativeOfficer.objects.all()
         self.context['data'] = datas
         return render(request,"adminis.html",self.context)
    
     def lib(self,request):
-        return render(request,"library.html")
+        l                   = librarian.objects.first()
+        self.context['lib'] = l
+        return render(request,"library.html",self.context)
     
     def lib_rules(self,request):
+        
         return render(request,"rules_.html")
     
     def res(self,request):
-        data = Resource.objects.all()
-        books = Book.objects.all()
-        ref_book = ReferenceBooks.objects.all()
-        self.context['data'] = data
+        data                     = Resource.objects.all()
+        books                    = Book.objects.all()
+        ref_book                 = ReferenceBooks.objects.all()
+        self.context['data']     = data
         self.context['ref_book'] = ref_book
-        self.context['book'] = books 
+        self.context['book']     = books 
         return render(request,"res.html",self.context)
+
     def fac(self,request):
-        fac = FacultyMembers.objects.filter(department="English")
+        fac   = FacultyMembers.objects.filter(department="English")
+        fac1  = FacultyMembers.objects.filter(department="Bengali")
+        fac2  = FacultyMembers.objects.filter(department="Mathematics")
+        fac3  = FacultyMembers.objects.filter(department="Physics")
+        fac4  = FacultyMembers.objects.filter(department="Chemistry")
+        fac5  = FacultyMembers.objects.filter(department="Computer Science")
+        fac6  = FacultyMembers.objects.filter(department="Sanskrit")
+        fac7  = FacultyMembers.objects.filter(department="Geography")
+        fac8  = FacultyMembers.objects.filter(department="Economics")
+        fac9  = FacultyMembers.objects.filter(department="Political Science")
+        fac10 = FacultyMembers.objects.filter(department="Commerse")
+        fac11 = FacultyMembers.objects.filter(department="BBA")
+        fac12 = FacultyMembers.objects.filter(department="BCA")
+        fac13 = FacultyMembers.objects.filter(department="Philosophy")
+        fac14 = FacultyMembers.objects.filter(department="Education")
+        fac15 = FacultyMembers.objects.filter(department="Hindi")
+        fac16 = FacultyMembers.objects.filter(department="History")
         
-        self.context["english"] = fac
+        self.context["english"]             = fac
+        self.context["Bengali"]             = fac1
+        self.context["Mathematics"]         = fac2
+        self.context["Physics"]             = fac3
+        self.context["Chemistry"]           = fac4
+        self.context["ComputerScience"]     = fac5
+        self.context["Sanskrit"]            = fac6
+        self.context["Geography"]           = fac7
+        self.context["Economics"]           = fac8
+        self.context["PoliticalScience"]    = fac9
+        self.context["Commerse"]            = fac10
+        self.context["BBA"]                 = fac11
+        self.context["BCA"]                 = fac12
+        self.context["Philosophy"]          = fac13
+        self.context["Education"]           = fac14
+        self.context["Hindi"]               = fac15
+        self.context["History"]             = fac16
 
         return render(request,"faculty.html",self.context)
    
     
     def tcsion(self,request):
         return redirect("https://www.tcsion.com/SelfServices/")
+        
     def onlineadmissionadija(self,request):
         return redirect("https://dbmadmission.aadija.biz/")
    
