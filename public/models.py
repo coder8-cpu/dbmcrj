@@ -62,6 +62,15 @@ class AdministrativeOfficer(models.Model):
 
     def __str__(self) -> str:
         return str(self.name)
+class IQAC(models.Model):
+    name          = models.CharField(max_length=30,null=True)
+    desgination   = models.CharField(max_length=50,null=True)
+    image         = models.ImageField(upload_to="media/pics/administrative",null=True)
+
+class AQAR(models.Model):
+    label    = models.CharField(max_length=1000,null=True,blank=True)
+    file     = models.FileField()
+
 
 class GoverningBody(models.Model):
     name          = models.CharField(max_length=30,null=True)
