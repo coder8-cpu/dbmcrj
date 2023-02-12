@@ -69,8 +69,31 @@ class IQAC(models.Model):
 
 class AQAR(models.Model):
     label    = models.CharField(max_length=1000,null=True,blank=True)
-    file     = models.FileField()
+    file     = models.FileField(upload_to="media/aqar/pdf",null=True)
 
+class Departments(models.Model):
+    name = models.CharField(max_length=100)
+    image = models.ImageField(upload_to="media/departments/img")
+    def __str__(self) -> str:
+        return str(self.name)
+class Eresources(models.Model):
+    departments = models.ForeignKey(Departments,on_delete=models.CASCADE)
+    curiculam = models.FileField(upload_to="media/deparments/curiculam",null=True)
+    honours_resources = models.FileField(upload_to="media/departments/honours",null=True)
+    program_resources = models.FileField(upload_to="media/deparments/program",null=True)
+    def __str__(self) -> str:
+        return str(self.departments.name)
+
+class DepartmentsFaculty(models.Model):
+    name           = models.CharField(max_length=30,null=True)
+    desgination    = models.CharField(max_length=50,null=True,blank=True)
+    img            = models.ImageField(upload_to="media/pics/faculty",null=True,blank=True)
+    department     = models.ForeignKey(Departments,on_delete=models.CASCADE)
+    specialization = models.CharField(max_length=100,null=True,blank=True)
+    qualification  = models.CharField(max_length=100,null=True,blank=True)
+
+    def __str__(self) -> str:
+        return str(self.department.name)
 
 class GoverningBody(models.Model):
     name          = models.CharField(max_length=30,null=True)

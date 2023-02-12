@@ -118,11 +118,14 @@
                 <p class="section-title px-5"><span class="px-2">IQAC Members</span></p>
                 <h1 class="mb-4">Internal Quality Assurance Cell</h1>
             </div>
+            
             <div class="row">
+                {%for i in data%}
                 <div class="col-md-6 col-lg-3 text-center team mb-5">
-                    <h4>Principal </h4>
-                    <i>Dr.Tridip Santapa Kundu</i>
+                    <h4>{{i.desgination}}</h4>
+                    <i>{{i.name}}</i>
                 </div>
+                {%endfor%}
                
                 
             </div>
@@ -136,11 +139,12 @@
                 <h1 class="mb-4">AQAR</h1>
             </div>
             <div class="row">
+                {%for i in aqar%}
                 <div class="col-md-6 col-lg-3 text-center team mb-5">
                 
-                    <a href=""><i>AQAR 2007-2008</i></a>
+                    <a href="{{i.file.url}}"><i>{{i.label}}</i></a>
                 </div>
-               
+                {%endfor%}
                 
             </div>
         </div>
