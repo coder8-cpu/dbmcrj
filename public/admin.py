@@ -33,6 +33,9 @@ admin.site.register(DocumentRequired)
 admin.site.register(CoursesFee)
 admin.site.register(IQAC)
 admin.site.register(AQAR)
+admin.site.register(Departments)
+admin.site.register(Eresources)
+admin.site.register(DepartmentsFaculty)
 
 
 

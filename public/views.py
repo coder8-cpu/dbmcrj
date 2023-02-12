@@ -41,6 +41,8 @@ class AllPages():
         self.context['notice']    = Notice.objects.all()
         self.context['principle'] = PrincipleImage.objects.first()
         self.context['feedback']  = feedback.objects.all()
+        self.context['comp']  = ComputerCenter.objects.first()
+        self.context['can']  = Canteen.objects.first()
         
         return render(request,"index.html",self.context)
     def newsletter(self,request):
@@ -131,8 +133,11 @@ class AllPages():
         return render(request,"affilation.html")
 
     def iqac(self,request):
-
-        return render(request,"iqac.html")
+        data = IQAC.objects.all()
+        aqar = AQAR.objects.all()
+        self.context['iqac'] = data
+        self.context['aqar'] = aqar
+        return render(request,"iqac.html",self.context)
 
     def contact(self,request):
 
