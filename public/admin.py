@@ -38,6 +38,9 @@ admin.site.register(Eresources)
 admin.site.register(DepartmentsFaculty)
 admin.site.register(currentyear)
 admin.site.register(IndexSliderImage)
+admin.site.register(Ext_rep)
+admin.site.register(Facul_rep)
+admin.site.register(Manage_rep)
 
 
 
