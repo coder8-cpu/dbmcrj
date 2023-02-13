@@ -91,7 +91,41 @@
  .banner-main .carousel-indicators {
     right: inherit;
 }
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1450px;
+  position: relative;
+  margin: auto;
+}
 
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+
+
+/* Position the "next button" to the right */
+
+
+
+
+
+
+
+
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
 </style>
 <body>
     <!-- loader  --
@@ -181,6 +215,30 @@
             </div>
         </nav>
     </div>
+
+    <div class="slideshow-container">
+
+        <!-- Full-width images with number and caption text -->
+        {%for i in slide%}
+        <div class="mySlides fade">
+      
+          <img src="{{i.img1.url}}" style="width:100%">
+         
+        </div>
+        {%endfor%}
+      
+       
+      
+        
+      
+    
+      </div>
+      
+      
+      <!-- The dots/circles -->
+     
+
+
     <div class="container-fluid bg-primary px-0 px-md-5 mb-5">
         <div class="row align-items-center px-3">
                 <div class="col-lg-6 text-center text-lg-left"><br><br><br><br>
@@ -592,6 +650,21 @@ setTimeout(function () {
   $('.loader_bg').fadeToggle();
 }, 3800);
         })
+
+        let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
      </script>
 
     <!-- Contact Javascript File -->

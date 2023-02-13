@@ -42,6 +42,7 @@ urlpatterns = [
     path('Rules/<navs>/',                  navs.college_nav, name=""),
     path('Department/',                    all.depart, name="dep"),
     path('Department/select/<subject>/',   all.detail_dep, name="dtail_dep"),
+    path('Department/select/<subject>/<navs>/',   all.detail_dep, name="dtaildep_nav"),
     path('Department/<navs>/',             navs.college_nav, name=""),
     path('governing-body/',                all.gbody, name="gov"),
     path('governing-body/<navs>/',         navs.college_nav, name=""),

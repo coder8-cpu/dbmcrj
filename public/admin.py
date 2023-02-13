@@ -37,6 +37,7 @@ admin.site.register(Departments)
 admin.site.register(Eresources)
 admin.site.register(DepartmentsFaculty)
 admin.site.register(currentyear)
+admin.site.register(IndexSliderImage)
 
 
 

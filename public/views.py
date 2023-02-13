@@ -37,6 +37,7 @@ class AllPages():
             self.context['request'] = "Login"
 
         self.context['slide_img'] = SliderImage.objects.all()
+        self.context['slide'] = IndexSliderImage.objects.all()
         self.context['mark']      = IndexAlert.objects.all()
         self.context['notice']    = Notice.objects.all()
         self.context['principle'] = PrincipleImage.objects.first()
@@ -115,10 +116,59 @@ class AllPages():
 
         return render(request,"department.html",self.context)
 
-    def detail_dep(self,request,subject):
+    def detail_dep(self,request,subject,navs=None):
         self.currentdep = None
         self.resources  = None
         self.faculty    = None
+        if navs == "about":
+            return redirect(reverse("about"))
+
+        if navs == "vision":
+            return redirect(reverse("vision"))
+        if navs == "Affilation":
+            return redirect(reverse("affilation"))
+
+        if navs == "iqac":
+            return redirect(reverse("iqac"))
+
+        if navs == "gallary":
+            return redirect(reverse("gal"))
+
+        if navs == "contactus":
+            return redirect(reverse("contact"))
+
+        if navs == "governing-body":
+            return redirect(reverse("gov"))
+        if navs == "administrative-officers":
+            return redirect(reverse("adm"))
+        if navs == "Teachers-Council":
+            return redirect(reverse("tc"))
+        if navs == "Office-Staff":
+            return redirect(reverse("off"))
+        if navs == "Rules":
+            return redirect(reverse("rules"))
+        if navs == "Department":
+            return redirect(reverse("dep"))
+        if navs == "Admission":
+            return redirect(reverse("admission"))
+        if navs == "About":
+            return redirect(reverse("lib_about"))
+        if navs == "Resources":
+            return redirect(reverse("res"))
+        if navs == "Rules_":
+            return redirect(reverse("rules_lib"))
+        if navs == "index.html":
+            return redirect(reverse("index"))
+        if navs == "universityresult":
+            return redirect("https://www.tcsion.com/SelfServices/")
+        if navs == "onlineAdmission":
+            return redirect("https://dbmadmission.aadija.biz/")
+        if navs == "NSCB":
+            return redirect("/")
+        if navs == "Faculty":
+        
+            return redirect(reverse("fac"))
+
         if subject == "Physics-Honours":
             self.currentdep =  Departments.objects.get(name=subject)
             self.resources =  Eresources.objects.get(departments_id=self.currentdep.id)

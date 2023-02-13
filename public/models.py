@@ -8,7 +8,12 @@ class SliderImage(models.Model):
 
     def __str__(self) -> str:
         return str(self.event)
+class IndexSliderImage(models.Model):
+    img1           = models.ImageField(upload_to="media/pics/slider",null=True,blank=True)
+    name          = models.CharField(max_length=30,null=True,blank=True)
 
+    def __str__(self) -> str:
+        return str(self.name)
 class PrincipleImage(models.Model):
     principle_name = models.CharField(max_length=30,null=True,blank=True)
     img1           = models.ImageField(upload_to="media/pics/principle",null=True,blank=True)
