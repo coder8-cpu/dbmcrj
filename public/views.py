@@ -169,7 +169,7 @@ class AllPages():
         
             return redirect(reverse("fac"))
 
-        if subject == "Physics-Honours":
+        if subject != None:
             self.currentdep =  Departments.objects.get(name=subject)
             self.resources =  Eresources.objects.get(departments_id=self.currentdep.id)
             self.faculty =  DepartmentsFaculty.objects.filter(department_id=self.currentdep.id)
