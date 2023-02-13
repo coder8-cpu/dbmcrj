@@ -111,8 +111,29 @@ class AllPages():
         dep_data            = Courses.objects.all()
         
         self.context['dep'] = dep_data
-       
+        
+
         return render(request,"department.html",self.context)
+
+    def detail_dep(self,request,subject):
+        self.currentdep = None
+        self.resources  = None
+        self.faculty    = None
+        if subject == "Physics-Honours":
+            self.currentdep =  Departments.objects.get(name=subject)
+            self.resources =  Eresources.objects.get(departments_id=self.currentdep.id)
+            self.faculty =  DepartmentsFaculty.objects.filter(department_id=self.currentdep.id)
+            
+            self.context['dep'] = self.currentdep
+            self.context['faculty'] = self.faculty
+            self.context['cure'] = self.resources
+
+            return render(request,"detaildep.html",self.context)
+        
+        
+
+        
+        
 
     def tc(self,request):
         tc_data            = TeachersCouncil.objects.all()
@@ -181,6 +202,7 @@ class AllPages():
         self.context['data']     = data
         self.context['ref_book'] = ref_book
         self.context['book']     = books 
+        self.context['year']     = currentyear.objects.first()
         return render(request,"res.html",self.context)
 
     def fac(self,request):

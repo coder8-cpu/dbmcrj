@@ -36,6 +36,7 @@ class Courses(models.Model):
     coursename     = models.CharField(max_length=100,null=True,blank=True)
     courseseats    = models.CharField(max_length=30,null=True,blank=True)
     year           = models.CharField(max_length=10,null=True,blank=True)
+    course_main_subject_name      = models.CharField(max_length=1000,null=True,blank=True)
     
     def __str__(self) -> str:
         return str(self.coursename)
@@ -74,12 +75,16 @@ class AQAR(models.Model):
 class Departments(models.Model):
     name = models.CharField(max_length=100)
     image = models.ImageField(upload_to="media/departments/img")
+    about = models.CharField(max_length=100000000,null=True)
+    
     def __str__(self) -> str:
         return str(self.name)
 class Eresources(models.Model):
     departments = models.ForeignKey(Departments,on_delete=models.CASCADE)
-    curiculam = models.FileField(upload_to="media/deparments/curiculam",null=True)
+    Resource_link = models.CharField(max_length=300,null=True)
+    honours_resources_label = models.CharField(max_length=300,null=True)
     honours_resources = models.FileField(upload_to="media/departments/honours",null=True)
+    program_resources_label = models.CharField(max_length=300,null=True)
     program_resources = models.FileField(upload_to="media/deparments/program",null=True)
     def __str__(self) -> str:
         return str(self.departments.name)
@@ -91,6 +96,7 @@ class DepartmentsFaculty(models.Model):
     department     = models.ForeignKey(Departments,on_delete=models.CASCADE)
     specialization = models.CharField(max_length=100,null=True,blank=True)
     qualification  = models.CharField(max_length=100,null=True,blank=True)
+    cv             = models.FileField(upload_to="media/deparments/cv",null=True)
 
     def __str__(self) -> str:
         return str(self.department.name)
@@ -158,11 +164,20 @@ class Resource(models.Model):
     label    = models.CharField(max_length=1000,null=True,blank=True)
     link     = models.CharField(max_length=1000,null=True,blank=True)
     file     = models.FileField()
+    year     = models.CharField(max_length=1000,null=True,blank=True)
 
    
 
     def __str__(self) -> str:
         return str(self.label)
+class currentyear(models.Model):
+    year     = models.CharField(max_length=1000,null=True,blank=True)
+
+   
+
+    def __str__(self) -> str:
+        return str(self.year)
+
 class Book(models.Model):
     department_name = models.CharField(max_length=1000,null=True,blank=True)
     books_in_digit  = models.CharField(max_length=1000,null=True,blank=True)

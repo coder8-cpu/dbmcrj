@@ -36,6 +36,7 @@ admin.site.register(AQAR)
 admin.site.register(Departments)
 admin.site.register(Eresources)
 admin.site.register(DepartmentsFaculty)
+admin.site.register(currentyear)
 
 
 

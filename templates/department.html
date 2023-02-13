@@ -108,7 +108,7 @@
     </div>
     <!-- Navbar End -->
 
-
+    
 
 
      <!-- About Start -->
@@ -128,7 +128,7 @@
                         </li>
                         {%for i in dep%}
                         <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                            <a href="">{{i.coursename}}</a>
+                            <a href="select/{{i.course_main_subject_name}}">{{i.coursename}}</a>
                             <span class="badge badge-primary badge-pill">{{i.courseseats}}</span>
                         </li>
                         {%endfor%}
