@@ -206,8 +206,14 @@ class AllPages():
     def iqac(self,request):
         data = IQAC.objects.all()
         aqar = AQAR.objects.all()
+        mng = Manage_rep.objects.all()
+        rep = Facul_rep.objects.all()
+        ext = Ext_rep.objects.all()
         self.context['data'] = data
         self.context['aqar'] = aqar
+        self.context['Management'] = mng
+        self.context['repre'] = rep
+        self.context['ext'] = ext
         return render(request,"iqac.html",self.context)
 
     def contact(self,request):
