@@ -218,11 +218,11 @@ class CarrerGuidence(models.Model):
         return str(self.name)
 
 class AcademicCalander(models.Model):
-    description = models.CharField(max_length=100,null=True,blank=True)
-    link        = models.CharField(max_length=1000,null=True,blank=True)
+    name = models.CharField(max_length=100,null=True,blank=True)
+    file        = models.FileField(upload_to="media/academic-calender/",null=True,blank=True)
 
     def __str__(self) -> str:
-        return str(self.description)
+        return str(self.name)
 class ComputerCenter(models.Model):
     image       = models.ImageField(upload_to="media/pics/computerlab",null=True,blank=True)
     def __str__(self) -> str:

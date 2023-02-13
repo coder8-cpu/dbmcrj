@@ -223,8 +223,9 @@ class AllPages():
         return render(request,"contact.html")
     
     def rules(self,request):
-
-        return render(request,"rules.html")
+        data = AcademicCalander.objects.all()
+        self.context['calendar'] = data
+        return render(request,"rules.html",self.context)
    
     def tc(self,request):
         tc                = TeachersCouncil.objects.all()
