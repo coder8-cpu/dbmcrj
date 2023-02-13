@@ -206,7 +206,7 @@ class AllPages():
     def iqac(self,request):
         data = IQAC.objects.all()
         aqar = AQAR.objects.all()
-        self.context['iqac'] = data
+        self.context['data'] = data
         self.context['aqar'] = aqar
         return render(request,"iqac.html",self.context)
 

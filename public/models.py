@@ -14,6 +14,15 @@ class IndexSliderImage(models.Model):
 
     def __str__(self) -> str:
         return str(self.name)
+class Manage_rep(models.Model):
+    name          = models.CharField(max_length=30,null=True)
+    desgination   = models.CharField(max_length=50,null=True)
+class Ext_rep(models.Model):
+    name          = models.CharField(max_length=3000,null=True)
+    desgination   = models.CharField(max_length=5000,null=True)
+class Facul_rep(models.Model):
+    name          = models.CharField(max_length=30000,null=True)
+    desgination   = models.CharField(max_length=50009,null=True)
 class PrincipleImage(models.Model):
     principle_name = models.CharField(max_length=30,null=True,blank=True)
     img1           = models.ImageField(upload_to="media/pics/principle",null=True,blank=True)
