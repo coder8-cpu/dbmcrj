@@ -100,27 +100,27 @@ class Dashboard():
             
             if self.admit.exists():
             
-                self.context["admit"] = self.admit[0]
+                self.context["admit"]     = self.admit[0]
             else:
-                self.context["admit"] = self.admit
+                self.context["admit"]     = self.admit
             
             if self.registrationno.exists():
-                   self.context["reg"] = self.registrationno[0]
+                   self.context["reg"]    = self.registrationno[0]
                
             else:
-                  self.context["reg"]  = self.registrationno
+                  self.context["reg"]     = self.registrationno
                 
             if self.registrationno.exists():
                   
-                self.context["exam"]   = self.exam[0]
+                self.context["exam"]      = self.exam[0]
             else:
-                self.context["exam"]   = self.exam
+                self.context["exam"]      = self.exam
             
             if self.syl.exists():
                   
-                self.context["syl"]    = self.syl[0]
+                self.context["syl"]       = self.syl[0]
             else:
-                self.context["syl"]    = self.syl
+                self.context["syl"]       = self.syl
 
             
             
@@ -147,11 +147,11 @@ class geo_locate:
 
 
     def get_ip(self,request):
-        get_ip                = request.META.get('HTTP_X_FORWARDED_FOR')
+        get_ip                 = request.META.get('HTTP_X_FORWARDED_FOR')
         if get_ip:
-            self.ip           = get_ip.split(',')[0]
+            self.ip            = get_ip.split(',')[0]
         else:
-            self.ip           = request.META.get('REMOTE_ADDR')
+            self.ip            = request.META.get('REMOTE_ADDR')
         return self.ip
 
 

@@ -37,21 +37,21 @@ class AllPages():
             self.context['request'] = "Login"
 
         self.context['slide_img'] = SliderImage.objects.all()
-        self.context['slide'] = IndexSliderImage.objects.all()
+        self.context['slide']     = IndexSliderImage.objects.all()
         self.context['mark']      = IndexAlert.objects.all()
         self.context['notice']    = Notice.objects.all()
         self.context['principle'] = PrincipleImage.objects.first()
         self.context['feedback']  = feedback.objects.all()
-        self.context['comp']  = ComputerCenter.objects.first()
-        self.context['can']  = Canteen.objects.first()
+        self.context['comp']      = ComputerCenter.objects.first()
+        self.context['can']       = Canteen.objects.first()
         
         return render(request,"index.html",self.context)
     def newsletter(self,request):
 
-        data       = request.POST
-        news       = newsletter()
-        news.name  = data.get('name')
-        news.email = data.get('email')
+        data                      = request.POST
+        news                      = newsletter()
+        news.name                 = data.get('name')
+        news.email                = data.get('email')
         news.save()
         return redirect(reverse("index"))
 
@@ -62,41 +62,41 @@ class AllPages():
 
     def admission(self,request):
 
-        notice_data            = AdmissionNotice.objects.first()
-        courses                = CoursesFee.objects.all()
-        docs                   = DocumentRequired.objects.all()
-        notice_file            = notice_files.objects.all()
-        self.context["notice"] = notice_data
-        self.context["course"] = courses
-        self.context["doc"]    = docs
-        self.context["files"]  = notice_file
+        notice_data                 = AdmissionNotice.objects.first()
+        courses                     = CoursesFee.objects.all()
+        docs                        = DocumentRequired.objects.all()
+        notice_file                 = notice_files.objects.all()
+        self.context["notice"]      = notice_data
+        self.context["course"]      = courses
+        self.context["doc"]         = docs
+        self.context["files"]       = notice_file
         return render(request,"admission.html",self.context)
 
     def adm_query(self,request):
 
-        obj         = PublicQueryForm()
-        data        = request.POST
-        obj.name    = data.get('name')
-        obj.email   = data.get('email')
-        obj.subject = data.get('mobileno')
-        obj.query   = data.get('message')
+        obj                         = PublicQueryForm()
+        data                        = request.POST
+        obj.name                    = data.get('name')
+        obj.email                   = data.get('email')
+        obj.subject                 = data.get('mobileno')
+        obj.query                   = data.get('message')
         obj.save()
         return redirect(reverse("admission"))
 
     def gbody(self,request):
 
-        g_data                = GoverningBody.objects.all()
-        self.context["datas"] = g_data
+        g_data                   = GoverningBody.objects.all()
+        self.context["datas"]    = g_data
         return render(request,"gbdy.html",self.context)
 
     def mngm(self,request):
-        obj                 = MamangementMembers.objects.all()
-        self.context['obj'] = obj
+        obj                      = MamangementMembers.objects.all()
+        self.context['obj']      = obj
         return render(request,"mngm.html",self.context)
 
     def offst(self,request):
-        off_data            = OfficeStaff.objects.all()
-        self.context['off'] = off_data
+        off_data                 = OfficeStaff.objects.all()
+        self.context['off']      = off_data
         return render(request,"offst.html",self.context)
 
     def res(self,request):
@@ -109,17 +109,17 @@ class AllPages():
         return render(request,"res.html",self.context)
 
     def depart(self,request):
-        dep_data            = Courses.objects.all()
+        dep_data                 = Courses.objects.all()
         
-        self.context['dep'] = dep_data
+        self.context['dep']      = dep_data
         
 
         return render(request,"department.html",self.context)
 
     def detail_dep(self,request,subject,navs=None):
-        self.currentdep = None
-        self.resources  = None
-        self.faculty    = None
+        self.currentdep         = None
+        self.resources          = None
+        self.faculty            = None
         if navs == "about":
             return redirect(reverse("about"))
 
@@ -169,6 +169,7 @@ class AllPages():
         
             return redirect(reverse("fac"))
 
+<<<<<<< HEAD
         
         self.currentdep =  Departments.objects.get(name=subject)
         self.resources =  Eresources.objects.get(departments_id=self.currentdep.id)
@@ -177,6 +178,16 @@ class AllPages():
         self.context['dep'] = self.currentdep
         self.context['faculty'] = self.faculty
         self.context['cure'] = self.resources
+=======
+        if subject != None:
+            self.currentdep =  Departments.objects.get(name=subject)
+            self.resources  =  Eresources.objects.get(departments_id=self.currentdep.id)
+            self.faculty    =  FacultyMembers.objects.filter(department=subject)
+            
+            self.context['dep']     = self.currentdep
+            self.context['faculty'] = self.faculty
+            self.context['cure']    = self.resources
+>>>>>>> 64d9121cce900b10a016920f164bfb941bea65c2
 
         return render(request,"detaildep.html",self.context)
         
@@ -186,8 +197,8 @@ class AllPages():
         
 
     def tc(self,request):
-        tc_data            = TeachersCouncil.objects.all()
-        self.context['tc'] = tc_data
+        tc_data               = TeachersCouncil.objects.all()
+        self.context['tc']    = tc_data
         return render(request,"tc.html",self.context)
     
     def about(self,request):
@@ -204,38 +215,38 @@ class AllPages():
         return render(request,"affilation.html")
 
     def iqac(self,request):
-        data = IQAC.objects.all()
-        aqar = AQAR.objects.all()
-        mng = Manage_rep.objects.all()
-        rep = Facul_rep.objects.all()
-        ext = Ext_rep.objects.all()
-        self.context['data'] = data
-        self.context['aqar'] = aqar
+        data    = IQAC.objects.all()
+        aqar    = AQAR.objects.all()
+        mng     = Manage_rep.objects.all()
+        rep     = Facul_rep.objects.all()
+        ext     = Ext_rep.objects.all()
+        self.context['data']       = data
+        self.context['aqar']       = aqar
         self.context['Management'] = mng
-        self.context['repre'] = rep
-        self.context['ext'] = ext
+        self.context['repre']      = rep
+        self.context['ext']        = ext
         return render(request,"iqac.html",self.context)
 
     def contact(self,request):
 
         if request.method == 'POST':
-            data         = PublicQueryForm()
-            data.name    = request.POST.get('name')
-            data.email   = request.POST.get('email')
-            data.subject = request.POST.get('subject')
-            data.message = request.POST.get('message')
+            data                   = PublicQueryForm()
+            data.name              = request.POST.get('name')
+            data.email             = request.POST.get('email')
+            data.subject           = request.POST.get('subject')
+            data.message           = request.POST.get('message')
             return redirect(reverse("contact"))
 
         return render(request,"contact.html")
     
     def rules(self,request):
-        data = AcademicCalander.objects.all()
+        data                     = AcademicCalander.objects.all()
         self.context['calendar'] = data
         return render(request,"rules.html",self.context)
    
     def tc(self,request):
-        tc                = TeachersCouncil.objects.all()
-        self.context['t'] = tc
+        tc                   = TeachersCouncil.objects.all()
+        self.context['t']    = tc
         return render(request,"tc.html",self.context)
     
     def admins(self,request):
