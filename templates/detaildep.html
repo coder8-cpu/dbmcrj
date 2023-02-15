@@ -202,15 +202,18 @@
         <ul class="list-group list-group-flush">
            
             <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                {%if cure.Resource_link != "/"%}
                 <a href="{{cure.Resource_link}}">E-Resource</a>
-                
+                {%else%}
+                <a href="{{cure.Resource_link_file.url}}">E-Resource</a>
+                {%endif%}
                
                 
             </li>
             <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-       
+                {%if cure.honours_resources_label != None %}
                 <a href="{{cure.honours_resources.url}}">{{cure.honours_resources_label}}</a>
-               
+                {%endif%} 
                 
             </li>
             <li class="list-group-item d-flex justify-content-between align-items-center px-0">

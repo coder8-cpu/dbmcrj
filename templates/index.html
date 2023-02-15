@@ -170,6 +170,7 @@
                             <a href="administrative-officers/" class="dropdown-item">ADMINISTRATIVE OFFICERS</a>
                             <a href="Teachers-Council/" class="dropdown-item">TEACHER'S COUNCIL</a>
                             <a href="Office-Staff/" class="dropdown-item">OFFICE STAFF</a>
+                            <a href="Leave-application/" class="dropdown-item">LEAVE APPLICATION</a>
                         </div>
                     </div>
                     <div class="nav-item dropdown">
@@ -255,10 +256,10 @@
                 <h4 class="text-white mb-4 mt-5 mt-lg-0">Stay Up to date</h4>
                 <div class="box1">
                     
-                    <marquee behavior="scroll" direction="up" scrolldelay="100">
+                    <marquee behavior="scroll" direction="up" scrolldelay="215" onMouseOver="stop()" onMouseOut="start()">
                         {%for i in mark %}
                         
-        <a href="" style="color:white;">{{i.message}}</a><br><br> 
+        <a href="{{i.file.url}}" style="color:white;">{{i.message}}</a><br><br> 
 
         
                         {%endfor%}
@@ -374,7 +375,8 @@
                     <div class="d-flex align-items-center">
                            <div class="pl-3">
                             <h5>{{i.notice_details}}</h5>
-                            <a href="{{i.notice_file.url}}" download><i>{{i.notice_link_name}}</i></a>
+                            <a href="{{i.notice_file.url}}" download><i>Download</i></a>
+                            <a href="{{i.notice_file.url}}" ><i>{{i.notice_link_name}}</i></a>
                         </div>
                     </div>
                 </div>
