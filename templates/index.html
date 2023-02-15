@@ -33,13 +33,13 @@
 </head>
 <style>
 
-       .loader_bg {
+ .loader_bg {
      position: fixed;
      z-index: 9999999;
      background: #fff;
      width: 100%;
      height: 100%;
-}
+    }
  .loader {
      height: 100%;
      width: 100%;
@@ -49,193 +49,169 @@
      display: flex;
      justify-content: center;
      align-items: center;
-}
+    }
  .loader img {
      width: 700px;
-}
-
-    .box1{
-        color:white;
-        font-weight: 600;
     }
-    .banner-main {
-    position: relative;
-}
+
+ .box1{
+     color:white;
+     font-weight: 600;
+    }
+
+ .banner-main {
+     position: relative;
+    }
+
  .banner-main .carousel-caption h1 {
-    font-size: 51px;
+     font-size: 51px;
      line-height: 72px;
      color: #fff;
      font-weight: bold;
      padding-bottom: 35px;
      padding-top: 25px;
-}
+    }
 
- 
  .banner-main .carousel-caption p {
-    font-size: 18px;
+     font-size: 18px;
      line-height: 30px;
      color: #fff;
-}
+    }
+
  .carousel-indicators .active {
-    background-color: #18bb18;
-}
+     background-color: #18bb18;
+    }
+
  .carousel-indicators li {
-    background-color: #000;
+     background-color: #000;
      width: 20px;
      height: 20px;
      border-radius:20px;
-}
-
-
+    }
 
  .banner-main .carousel-indicators {
-    right: inherit;
-}
+     right: inherit;
+    }
 /* Slideshow container */
-.slideshow-container {
-  max-width: 1300px;
-  position: relative;
-  margin: auto;
-}
+ .slideshow-container {
+     max-width: 1300px;
+     position: relative;
+     margin: auto;
+    }
 
 /* Hide the images by default */
-.mySlides {
-  display: none;
-}
-
-/* Next & previous buttons */
-
-
-/* Position the "next button" to the right */
-
-
-
-
-
-
-
-
+ .mySlides {
+     display: none;
+    }
 
 /* Fading animation */
-.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
+ .fade {
+     animation-name: fade;
+    animation-duration: 1.5s;
+    }
 
-@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
+ @keyframes fade {
+     from {opacity: .4}
+     to {opacity: 1}
+    }
+
 </style>
+
 <body>
-    <!-- loader  --
-    <div class="loader_bg" style="background-color:#20232a;">
-        <div class="loader"><img src="{%static 'img/load.gif'%}" alt="#" /></div>
-     </div>
-     <!-- end loader -->
-     
-    <!-- Navbar Start -->
+
     <div class="container-fluid bg-light position-relative shadow">
-        <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5">
-            <a href="" class="navbar-brand font-weight-bold text-secondary" style="font-size:19px;">
-                <img src="{%static 'img/Images/header/logo.png'%}">
-                
-            </a>
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                <div class="navbar-nav font-weight-bold mx-auto py-0">
-                    <a href="index.html" class="nav-item nav-link active">HOME</a>
-                   
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">COLLEGE</a>
-                        <div class="dropdown-menu rounded-0 m-0">
-                            <a href="about/" class="dropdown-item">ABOUT THE COLLEGE</a>
-                            <a href="vision/" class="dropdown-item">VISION-MISSION-GOAL</a>
-                            <a href="Affilation/" class="dropdown-item">AFFILIATION AND RECOGNITION</a>
-                            <a href="iqac/" class="dropdown-item">IQAC</a>
-                            <a href="gallary/" class="dropdown-item">GALLERY</a>
-                            <a href="universityresult/" class="dropdown-item">UNIVERSITY RESULTS</a>
-                            <a href="contactus/" class="dropdown-item">CONTACT US</a>
-                            
-                           
-                        </div>
-                        
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">ADMINISTRATION</a>
-                        <div class="dropdown-menu rounded-0 m-0">
-                            <a href="governing-body/" class="dropdown-item">GOVERNING BODY</a>
-                            <a href="administrative-officers/" class="dropdown-item">ADMINISTRATIVE OFFICERS</a>
-                            <a href="Teachers-Council/" class="dropdown-item">TEACHER'S COUNCIL</a>
-                            <a href="Office-Staff/" class="dropdown-item">OFFICE STAFF</a>
-                        </div>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">ACADEMICS</a>
-                        <div class="dropdown-menu rounded-0 m-0">
-                            <a href="Faculty/" class="dropdown-item">FACULTY MEMBERS</a>
-                            <a href="Rules/" class="dropdown-item">RULES & REGULATIONS</a>
-                            <a href="Department/" class="dropdown-item">DEPARTMENT</a>
-                            <a href="https://pg.wbnsouadmissions.com/" class="dropdown-item">NETAJI SUBHASH OPEN UNIVERSITY</a>
-                        </div>
-                    </div>
+    <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5">
+    <a href="" class="navbar-brand font-weight-bold text-secondary" style="font-size:19px;">
+        <img src="{%static 'img/Images/header/logo.png'%}"> 
+    </a>
 
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">ADMISSION</a>
-                        <div class="dropdown-menu rounded-0 m-0">
-                            <a href="Admission/" class="dropdown-item">PROCESS & NOTICE</a>
-                            <a href="onlineAdmission/" class="dropdown-item">ONLINE ADMISSION</a>
-                            
-                        </div>
-                    </div>
-                   
-                    
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">LIBRARY</a>
-                        <div class="dropdown-menu rounded-0 m-0">
-                            <a href="About/" class="dropdown-item">ABOUT LIBRARY </a>
-                            <a href="Resources/" class="dropdown-item">RESOURCES</a>
-                            <a href="https://dbmcrj-opac.libcarecloud.com/" class="dropdown-item">E-LIBRARY</a>
-                            <a href="Rules_" class="dropdown-item">RULES</a>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+    <span class="navbar-toggler-icon"></span>
+    </button>
 
-                        </div>
-                    </div>
-                    
-                </div>
-                
-                    {%if request == 'Login'%}
-                        <a href="students/login/" class="btn btn-primary px-4">{{request}}</a>
-                    {%else%}
-                    <a href="students/dashboard/" class="btn btn-primary px-4">Dashboard</a>
-                    {%endif%}
+    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+    <div class="navbar-nav font-weight-bold mx-auto py-0">
+         <a href="index.html"        class="nav-item nav-link active">HOME            </a> 
 
-              
-            </div>
-        </nav>
+    <!--Navigation of college-->
+    <div class="nav-item dropdown">
+         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">COLLEGE  </a>
+         <div                               class="dropdown-menu rounded-0 m-0">
+         <a href="about/"                   class="dropdown-item">ABOUT THE COLLEGE          </a>
+         <a href="vision/"                  class="dropdown-item">VISION-MISSION-GOAL        </a>
+         <a href="Affilation/"              class="dropdown-item">AFFILIATION AND RECOGNITION</a>
+         <a href="iqac/"                    class="dropdown-item">IQAC                       </a>
+         <a href="gallary/"                 class="dropdown-item">GALLERY                    </a>
+         <a href="universityresult/"        class="dropdown-item">UNIVERSITY RESULTS         </a>
+         <a href="contactus/"               class="dropdown-item">CONTACT US                 </a>
+         </div>    
     </div>
+
+    <!--Navigation of Administration-->
+    <div class="nav-item dropdown">
+         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">ADMINISTRATION   </a>
+         <div                               class="dropdown-menu rounded-0 m-0">   
+         <a href="governing-body/"          class="dropdown-item">GOVERNING BODY              </a>
+         <a href="administrative-officers/" class="dropdown-item">ADMINISTRATIVE OFFICERS     </a>
+         <a href="Teachers-Council/"        class="dropdown-item">TEACHER'S COUNCIL           </a>
+         <a href="Office-Staff/"            class="dropdown-item">OFFICE STAFF                </a>
+         </div>
+    </div>
+
+
+    <div class="nav-item dropdown">
+         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">ACADEMICS                  </a>
+         <div                                       class="dropdown-menu rounded-0 m-0">
+         <a href="Faculty/"                         class="dropdown-item">FACULTY MEMBERS               </a>
+         <a href="Rules/"                           class="dropdown-item">RULES & REGULATIONS           </a>
+         <a href="Department/"                      class="dropdown-item">DEPARTMENT                    </a>
+         <a href="https://pg.wbnsouadmissions.com/" class="dropdown-item">NETAJI SUBHASH OPEN UNIVERSITY</a>
+         </div>
+    </div>
+
+
+    <div class="nav-item dropdown">
+         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">ADMISSION                  </a>
+         <div                                      class="dropdown-menu rounded-0 m-0">
+         <a href="Admission/"                      class="dropdown-item">PROCESS & NOTICE               </a>
+         <a href="onlineAdmission/"                class="dropdown-item">ONLINE ADMISSION               </a>
+         </div>
+    </div>
+       
+        
+    <div class="nav-item dropdown">
+         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">LIBRARY                   </a>
+         <div                                            class="dropdown-menu rounded-0 m-0">
+         <a href="About/"                                class="dropdown-item">ABOUT LIBRARY           </a>
+         <a href="Resources/"                            class="dropdown-item">RESOURCES               </a>
+         <a href="https://dbmcrj-opac.libcarecloud.com/" class="dropdown-item">E-LIBRARY               </a>
+         <a href="Rules_"                                class="dropdown-item">RULES                   </a>
+         </div>
+         </div>   
+    </div>
+                
+    {%if request == 'Login'%}
+        <a href="students/login/"     class="btn btn-primary px-4">{{request}}</a>
+    {%else%}
+        <a href="students/dashboard/" class="btn btn-primary px-4">Dashboard  </a>
+    {%endif%}
+    </div>
+
+    </nav>
+    </div>
+
+
 
     <div class="slideshow-container">
 
         <!-- Full-width images with number and caption text -->
         {%for i in slide%}
         <div class="mySlides fade">
-      
           <img src="{{i.img1.url}}" style="width:100%">
-         
         </div>
         {%endfor%}
-      
-       
-      
-        
-      
-    
-      </div>
-      
-      
-      <!-- The dots/circles -->
+        </div>
+        <!-- The dots/circles -->
      
 
 

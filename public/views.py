@@ -169,16 +169,16 @@ class AllPages():
         
             return redirect(reverse("fac"))
 
-        if subject == "Physics-Honours":
-            self.currentdep =  Departments.objects.get(name=subject)
-            self.resources =  Eresources.objects.get(departments_id=self.currentdep.id)
-            self.faculty =  DepartmentsFaculty.objects.filter(department_id=self.currentdep.id)
-            
-            self.context['dep'] = self.currentdep
-            self.context['faculty'] = self.faculty
-            self.context['cure'] = self.resources
+        
+        self.currentdep =  Departments.objects.get(name=subject)
+        self.resources =  Eresources.objects.get(departments_id=self.currentdep.id)
+        self.faculty =  DepartmentsFaculty.objects.filter(department_id=self.currentdep.id)
+        
+        self.context['dep'] = self.currentdep
+        self.context['faculty'] = self.faculty
+        self.context['cure'] = self.resources
 
-            return render(request,"detaildep.html",self.context)
+        return render(request,"detaildep.html",self.context)
         
         
 
