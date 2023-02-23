@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Deshabandhu Mahavidyalaya</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="{%static 'img/Images/header/logo.jpg'%}" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Nunito&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+<!-- Load font awesome icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Flaticon Font -->
+    <link href="{%static 'lib/flaticon/font/flaticon.css'%}" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{%static 'lib/owlcarousel/assets/owl.carousel.min.css'%}" rel="stylesheet">
+    <link href="{%static 'lib/lightbox/css/lightbox.min.css'%}" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{%static 'css/style.css'%}" rel="stylesheet">
+</head>
+<style>
+
+       .loader_bg {
+     position: fixed;
+     z-index: 9999999;
+     background: #fff;
+     width: 100%;
+     height: 100%;
+}
+ .loader {
+     height: 100%;
+     width: 100%;
+     position: absolute;
+     left: 0;
+     top: 0;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+ .loader img {
+     width: 700px;
+}
+
+    .box1{
+        color:white;
+        font-weight: 600;
+    }
+    .banner-main {
+    position: relative;
+}
+ .banner-main .carousel-caption h1 {
+    font-size: 51px;
+     line-height: 72px;
+     color: #fff;
+     font-weight: bold;
+     padding-bottom: 35px;
+     padding-top: 25px;
+}
+
+ 
+ .banner-main .carousel-caption p {
+    font-size: 18px;
+     line-height: 30px;
+     color: #fff;
+}
+ .carousel-indicators .active {
+    background-color: #18bb18;
+}
+ .carousel-indicators li {
+    background-color: #000;
+     width: 20px;
+     height: 20px;
+     border-radius:20px;
+}
+
+
+
+ .banner-main .carousel-indicators {
+    right: inherit;
+}
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1300px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+/* Fixed/sticky icon bar (vertically aligned 50% from the top of the screen) */
+.icon-bar {
+  position: fixed;
+  top: 30%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/* Style the icon bar links */
+.icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 10px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 17px;
+}
+
+/* Style the social media icons with color, if you want */
+.icon-bar a:hover {
+  background-color: #000;
+}
+
+.facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.google {
+  background: #dd4b39;
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+</style>
+<body>
+    <!-- loader  --
+    <div class="loader_bg" style="background-color:#20232a;">
+        <div class="loader"><img src="{%static 'img/load.gif'%}" alt="#" /></div>
+     </div>
+     <!-- end loader -->
+     
+     
+     
+    <!-- Navbar Start -->
+    <div class="container-fluid bg-light position-relative shadow">
+        <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5">
+            <a href="" class="navbar-brand font-weight-bold text-secondary" style="font-size:19px;">
+                <img src="{%static 'img/Images/header/logo.png'%}">
+                
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                <div class="navbar-nav font-weight-bold mx-auto py-0">
+                    <a href="index.html" class="nav-item nav-link active">HOME</a>
+                   
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">COLLEGE</a>
+                        <div class="dropdown-menu rounded-0 m-0">
+                            <a href="about/" class="dropdown-item">ABOUT THE COLLEGE</a>
+                            <a href="vision/" class="dropdown-item">VISION-MISSION-GOAL</a>
+                            <a href="Affilation/" class="dropdown-item">AFFILIATION AND RECOGNITION</a>
+                            <a href="iqac/" class="dropdown-item">IQAC</a>
+                            <a href="gallary/" class="dropdown-item">GALLERY</a>
+                            <a href="universityresult/" class="dropdown-item">UNIVERSITY RESULTS</a>
+                            <a href="contactus/" class="dropdown-item">CONTACT US</a>
+                            
+                           
+                        </div>
+                        
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">ADMINISTRATION</a>
+                        <div class="dropdown-menu rounded-0 m-0">
+                            <a href="governing-body/" class="dropdown-item">GOVERNING BODY</a>
+                            <a href="administrative-officers/" class="dropdown-item">ADMINISTRATIVE OFFICERS</a>
+                            <a href="Teachers-Council/" class="dropdown-item">TEACHERS' COUNCIL</a>
+                            <a href="Office-Staff/" class="dropdown-item">OFFICE STAFF</a>
+                            <a href="Leave-application/" class="dropdown-item">EMPLOYEE CORNER</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">ACADEMICS</a>
+                        <div class="dropdown-menu rounded-0 m-0">
+                            <a href="Faculty/" class="dropdown-item">FACULTY MEMBERS</a>
+                            <a href="Rules/" class="dropdown-item">RULES & REGULATIONS</a>
+                            <a href="Department/" class="dropdown-item">DEPARTMENT</a>
+                        </div>
+                    </div>
+
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">ADMISSION</a>
+                        <div class="dropdown-menu rounded-0 m-0">
+                            <a href="Admission/" class="dropdown-item">PROCESS & NOTICE</a>
+                            <a href="onlineAdmission/" class="dropdown-item">ONLINE ADMISSION</a>
+                            
+                        </div>
+                    </div>
+                   
+                    
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">LIBRARY</a>
+                        <div class="dropdown-menu rounded-0 m-0">
+                            <a href="About/" class="dropdown-item">ABOUT LIBRARY </a>
+                            <a href="Resources/" class="dropdown-item">RESOURCES</a>
+                            <a href="https://dbmcrj-opac.libcarecloud.com/" class="dropdown-item">E-LIBRARY</a>
+                            <a href="Rules_" class="dropdown-item">RULES</a>
+
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">EVENTS</a>
+                        <div class="dropdown-menu rounded-0 m-0">
+                            <a href="#" class="dropdown-item">NSS </a>
+                            <a href="#" class="dropdown-item">ALUMNI</a>
+                            <a href="#" class="dropdown-item">PLACEMENT CELL</a>
+
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                    {%if request == 'Login'%}
+                        <a href="students/login/" class="btn btn-primary px-4">{{request}}</a>
+                    {%else%}
+                    <a href="students/dashboard/" class="btn btn-primary px-4">Dashboard</a>
+                    {%endif%}
+
+              
+            </div>
+        </nav>
+    </div>
+
+    <div class="slideshow-container">
+
+        <!-- Full-width images with number and caption text -->
+        {%for i in slide%}
+        <div class="mySlides fade">
+      
+          <img src="{{i.img1.url}}" style="width:100%">
+         
+        </div>
+        {%endfor%}
+      
+       
+      
+        
+      
+    
+      </div>
+      
+      <!-- The social media icon bar -->
+<div class="icon-bar">
+  <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+  <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+  <a href="#" class="google"><i class="fa fa-google"></i></a>
+</div>
+     
+
+
+    <div class="container-fluid bg-primary px-0 px-md-5 mb-5">
+        <div class="row align-items-center px-3">
+                <div class="col-lg-6 text-center text-lg-left"><br><br><br><br>
+                    <h4 class="text-white mb-4 mt-5 mt-lg-0">Welcome To</h4>
+                    <h1 class="display-3 font-weight-bold text-white">Deshabandhu Mahavidyalaya</h1>
+                    <p class="text-white mb-4">Deshabandhu Mahavidyalaya, Chittaranjan was founded on 3rd September, 1973 under the aegis of Chittaranjan Locomotive Works, Hindustan Cables Ltd, Rupnarayanpur and a group of philanthropists of the area.<br><br> Initially the college was affiliate of The University of Burdwan. Subsequently from the academic session 2015-16 the college has been affiliated to the newly established Kazi Nazrul University.<br><br> Deshabandhu Mahavidyalaya, Chittaranjan has a glorious history of imparting higher education. It offers honours and general courses in science, humanities, commerce and also professional courses.
+
+                    </p>
+        
+                </div>
+
+
+                <div class="col-lg-6 text-center text-lg-left"><br><br>
+                <h4 class="text-white mb-4 mt-5 mt-lg-0">Stay Up to date</h4>
+                <div class="box1">
+                    
+                    <marquee behavior="scroll" direction="up" scrolldelay="215" onMouseOver="stop()" onMouseOut="start()">
+                        {%for i in mark %}
+                        
+        <a href="{{i.file.url}}" style="color:white;">{{i.message}}</a><br><br> 
+
+        
+                        {%endfor%}
+                    </marquee>
+                   
+                </div>
+               
+            </div>
+           >
+            </div>
+        </div>
+    </div>
+
+    <!-- Facilities Start -->
+    <div class="container-fluid pt-5">
+        <div class="container pb-3">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 pb-1">
+                    <div class="d-flex bg-light shadow-sm border-top rounded mb-4" style="padding: 30px;">
+                        <i class="flaticon-050-fence h1 font-weight-normal text-primary mb-3"></i>
+                        <div class="pl-4">
+                            <h4>Play Ground</h4>
+                            <p class="m-0">Outdoor area where children can play that usually includes special equipment...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 pb-1">
+                    <div class="d-flex bg-light shadow-sm border-top rounded mb-4" style="padding: 30px;">
+                        <i class="flaticon-022-drum h1 font-weight-normal text-primary mb-3"></i>
+                        <div class="pl-4">
+                            <h4>Career Guidance</h4>
+                            <p class="m-0"> Type of counseling undertaken by professionals to identify the most suitable careers...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 pb-1">
+                    <div class="d-flex bg-light shadow-sm border-top rounded mb-4" style="padding: 30px;">
+                        <i class="flaticon-030-crayons h1 font-weight-normal text-primary mb-3"></i>
+                        <div class="pl-4">
+                            <h4>Arts and Crafts</h4>
+                            <p class="m-0">Activities and hobbies that are related to making things with one's own hands and skill...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 pb-1">
+                    <div class="d-flex bg-light shadow-sm border-top rounded mb-4" style="padding: 30px;">
+                        <i class="flaticon-017-toy-car h1 font-weight-normal text-primary mb-3"></i>
+                        <div class="pl-4">
+                            <h4>Student Aid</h4>
+                            <p class="m-0">Help students to pay for their education...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 pb-1">
+                    <div class="d-flex bg-light shadow-sm border-top rounded mb-4" style="padding: 30px;">
+                        <i class="flaticon-025-sandwich h1 font-weight-normal text-primary mb-3"></i>
+                        <div class="pl-4">
+                            <h4>Healthy food</h4>
+                            <p class="m-0">Get food like you got in your home....</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 pb-1">
+                    <div class="d-flex bg-light shadow-sm border-top rounded mb-4" style="padding: 30px;">
+                        <i class="flaticon-047-backpack h1 font-weight-normal text-primary mb-3"></i>
+                        <div class="pl-4">
+                            <h4>Library</h4>
+                            <p class="m-0">Get books on time and return by due date....</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Facilities Start -->
+
+
+    <!-- About Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <img class="img-fluid rounded mb-5 mb-lg-0" src="{{principle.img1.url}}" alt="">
+                </div>
+                <div class="col-lg-7">
+                    <p class="section-title pr-5"><span class="pr-2">{{principle.principle_name}}</span></p>
+                    <h1 class="mb-4">Message from Principal's Desk</h1>
+                    <p>I am in immense pleasure to present our college website. It is in conformity with the modern trend of resorting to information technology.<br><br> This will be helpful for prospective students, guardians and whoever concerned to have access to the details of the college including academic and relevant matters.<br><br>
+                    
+                    </p>
+                    <a href="" download>College prospective</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+     <!-- Testimonial Start -->
+    <div class="container-fluid py-5">
+        <div class="container p-0">
+            <div class="text-center pb-2">
+                <p class="section-title px-5"><span class="px-2">Notices</span></p>
+                <h1 class="mb-4">Important Notices</h1>
+            </div>
+
+            <div class="owl-carousel testimonial-carousel">
+                {%for i in notice%}
+                <div class="testimonial-item px-3">
+                    <div class="bg-light shadow-sm rounded mb-4 p-4">
+                        
+                        {{i.notice_title}}
+                    </div>
+                    <div class="d-flex align-items-center">
+                           <div class="pl-3">
+                            <h5>{{i.notice_details}}</h5>
+                            <a href="{{i.notice_file.url}}" download><i>Download</i></a>
+                            <a href="{{i.notice_file.url}}" ><i>{{i.notice_link_name}}</i></a>
+                        </div>
+                    </div>
+                </div>
+                {%endfor%}
+
+                
+                
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+
+
+    <!-- Class Start -->
+    <div class="container-fluid pt-5">
+        <div class="container">
+            <div class="text-center pb-2">
+                <p class="section-title px-5"><span class="px-2">Colleges Events and memorable pictures</span></p>
+                <h1 class="mb-4">Events</h1>
+            </div>
+
+            <div class="row">
+                {%for i in slide_img%}
+                <div class="col-lg-4 mb-5">
+                    <div class="card border-0 bg-light shadow-sm pb-2">
+                        <img class="card-img-top mb-2" src="{{i.img1.url}}" alt="">
+                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
+                            <a href="{{i.img1.url}}" data-lightbox="portfolio">
+                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
+                            </a>
+                        </div>
+                        <div class="card-body text-center">
+                            <h4 class="card-title">{{i.event}}</h4>
+                            
+                        </div>
+                    </div>
+                </div>
+                {%endfor%}
+                
+            </div>
+        </div>
+    </div>
+    <!-- Blog End -->
+
+     <!-- Blog Start -->
+     <div class="container-fluid pt-5">
+        <div class="container">
+            <div class="text-center pb-2">
+                <p class="section-title px-5"><span class="px-2">Facilities in the Campus</span></p>
+                <h1 class="mb-4">Our Facilities</h1>
+            </div>
+            <div class="row pb-3">
+                <div class="col-lg-4 mb-4">
+                    <div class="card border-0 shadow-sm mb-2">
+                        <img class="card-img-top mb-2" src="{{comp.image.url}}" alt="">
+                        <div class="card-body bg-light text-center p-4">
+                            <h4 class="">Computer Science Lab</h4>
+                            <div class="d-flex justify-content-center mb-3">
+                                <small class="mr-3"><i class="fa fa-user text-primary"></i> Student</small>
+                                <small class="mr-3"><i class="fa fa-folder text-primary"></i> Web Development</small>
+                                <small class="mr-3"><i class="fa fa-comments text-primary"></i> 15</small>
+                            </div>
+                            <p>.These are typically public libraries and academic institutions.Generally, users must follow a certain user policy to retain access to the computers. </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card border-0 shadow-sm mb-2">
+                        <img class="card-img-top mb-2" src="{{can.image.url}}" alt="">
+                        <div class="card-body bg-light text-center p-4">
+                            <h4 class="">College Canteen</h4>
+                            <div class="d-flex justify-content-center mb-3">
+                                <small class="mr-3"><i class="fa fa-user text-primary"></i> People</small>
+                               
+                                <small class="mr-3"><i class="fa fa-comments text-primary"></i> 4</small>
+                            </div>
+                            <p>A cafeteria, sometimes called a canteen it is a type of food service location in which there is little or no waiting staff table service, </p>
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card border-0 shadow-sm mb-2">
+                        <img class="card-img-top mb-2" src="{{can.image.url}}" alt="">
+                        <div class="card-body bg-light text-center p-4">
+                            <h4 class="">Auditorium</h4>
+                            <div class="d-flex justify-content-center mb-3">
+                                <small class="mr-3"><i class="fa fa-user text-primary"></i> Member</small>
+                                <small class="mr-3"><i class="fa fa-folder text-primary"></i> Programm</small>
+                                <small class="mr-3"><i class="fa fa-comments text-primary"></i> OO</small>
+                            </div>
+                            <p>A room built to enable an audience to hear and watch performances. For movie theatres, the number of auditoria is expressed as the number of screens.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Blog End -->
+
+    <div class="container-fluid py-5">
+        <div class="container p-0">
+            <div class="text-center pb-2">
+                <p class="section-title px-5"><span class="px-2">Testimonial</span></p>
+                <h1 class="mb-4">What Student's Say!</h1>
+            </div>
+            <div class="owl-carousel testimonial-carousel">
+                {%for i in feedback%}
+                <div class="testimonial-item px-3">
+                    <div class="bg-light shadow-sm rounded mb-4 p-4">
+                        <h3 class="fas fa-quote-left text-primary mr-3"></h3>
+                        {{i.msg}}
+                        </div>
+                    <div class="d-flex align-items-center">
+                       
+                        <div class="pl-3">
+                            <h5>{{i.name}}</h5>
+                            <i>Student</i>
+                        </div>
+                    </div>
+                </div>
+                {%endfor%}
+                
+            </div>
+        </div>
+    </div>
+    <!-- Registration Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7 mb-5 mb-lg-0">
+                    <p class="section-title pr-5"><span class="pr-2">Feedback</span></p>
+                    <h1 class="mb-4">Student Feedback</h1>
+                    <p>Comments about something that you have done which tells you how good or bad it is and express your feedback here to show your feelings regarding college.</p>
+                   
+                </div>
+                <div class="col-lg-5">
+                    <div class="card border-0">
+                        <div class="card-header bg-secondary text-center p-4">
+                            <h1 class="text-white m-0">Feedback</h1>
+                        </div>
+                        <div class="card-body rounded-bottom bg-primary p-5">
+                            <form action="post/" method="post">
+                                {%csrf_token%}
+                                <div class="form-group">
+                                    <input type="text" class="form-control border-0 p-4" placeholder="Your Name" required="required" name="name" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control border-0 p-4" placeholder="Your Feedback" required="required" name="msg" />
+                                </div>
+                                
+                                <div>
+                                    <button class="btn btn-secondary btn-block border-0 py-3" type="submit">Feedback</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Registration End -->
+
+
+
+
+    
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-secondary text-white mt-5 py-5 px-sm-3 px-md-5">
+        <div class="row pt-5">
+            <div class="col-lg-3 col-md-6 mb-5">
+                <a href="" class="navbar-brand font-weight-bold text-primary m-0 mb-4 p-0" style="font-size: 20px; line-height: 40px;">
+                    <img src="{%static 'img/Images/header/111.png'%}">
+                    <span class="text-white">Deshabandhu Mahavidyalaya</span>
+                </a>
+                <p>Established 1973 | Affiliated to Kazi Nazrul University
+                    NAAC Accredited 'B+' Grade Institution with CGPA 2.55
+                    Recognized under 12(B) and 2(f) of the UGC Act 1956</p>
+                <div class="d-flex justify-content-start mt-4">
+                    <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
+                        style="width: 38px; height: 38px;" href="#"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
+                        style="width: 38px; height: 38px;" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
+                        style="width: 38px; height: 38px;" href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
+                        style="width: 38px; height: 38px;" href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h3 class="text-primary mb-4">Get In Touch</h3>
+                <div class="d-flex">
+                    <h4 class="fa fa-map-marker-alt text-primary"></h4>
+                    <div class="pl-3">
+                        <h5 class="text-white">Address</h5>
+                        <p>P.O.:Chittaranjan</p>
+                       <p> District:Paschim Bardhaman</p>
+                       <p>Pin :713331 West Bengal</p>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <h4 class="fa fa-envelope text-primary"></h4>
+                    <div class="pl-3">
+                        <h5 class="text-white">Email</h5>
+                        <p>dbmprincipal@rediffmail.com</p>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <h4 class="fa fa-phone-alt text-primary"></h4>
+                    <div class="pl-3">
+                        <h5 class="text-white">Phone</h5>
+                        <p>+ 91-341-2525 449</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h3 class="text-primary mb-4">Quick Links</h3>
+                <div class="d-flex flex-column justify-content-start">
+                    <a class="text-white mb-2" href="http://www.knu.ac.in/"><i class="fa fa-angle-right mr-2"></i>Kazi Nazrul University</a>
+                    <a class="text-white mb-2" href="https://www.ugc.ac.in/"><i class="fa fa-angle-right mr-2"></i>University Grants Commission</a>
+                    <a class="text-white mb-2" href="https://banglaruchchashiksha.wb.gov.in/"><i class="fa fa-angle-right mr-2"></i>Dept. of Higher Education, Govt. of WB</a>
+                    <a class="text-white mb-2" href="https://www.education.gov.in/en"><i class="fa fa-angle-right mr-2"></i>MHRD, Govt. of India</a>
+                    <a class="text-white mb-2" href="https://nlist.inflibnet.ac.in/"><i class="fa fa-angle-right mr-2"></i>N-LIST : Library and Information Services</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h3 class="text-primary mb-4">Newsletter</h3>
+                <form action="newsletter/" method="post">
+                    {%csrf_token%}
+                    <div class="form-group">
+                        <input type="text" class="form-control border-0 py-4" placeholder="Your Name" required="required" name="name"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control border-0 py-4" placeholder="Your Email"
+                            required="required" name="email" />
+                    </div>
+                    <div>
+                        <button class="btn btn-primary btn-block border-0 py-3" type="submit">Submit Now</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="container-fluid pt-5" style="border-top: 1px solid rgba(23, 162, 184, .2);;">
+            <p class="m-0 text-center text-white">
+                &copy; <a class="text-primary font-weight-bold" href="#">Deshabandhu Mahavidyalaya</a>. All Rights Reserved. Designed
+                by 
+                <a class="text-primary font-weight-bold" href="">CoderFD</a>
+            </p>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary p-3 back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="{%static 'lib/easing/easing.min.js'%}"></script>
+    <script src="{%static 'lib/owlcarousel/owl.carousel.min.js'%}"></script>
+    <script src="{%static 'lib/isotope/isotope.pkgd.min.js'%}"></script>
+    <script src="{%static 'js/lightbox.min.js'%}"></script>
+    <script>
+        $(function () {
+
+"use strict";
+
+setTimeout(function () {
+  $('.loader_bg').fadeToggle();
+}, 3800);
+        })
+
+        let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 1500); // Change image every 2 seconds
+}
+     </script>
+
+    <!-- Contact Javascript File -->
+    <script src="{%static 'mail/jqBootstrapValidation.min.js'%}"></script>
+    <script src="{%static 'mail/contact.js'%}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{%static 'js/main.js' %}"></script>
+</body>
+
+</html>
